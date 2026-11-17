@@ -2,6 +2,7 @@
 
 # pyradix
 
+[![PyPI](https://img.shields.io/pypi/v/pyradix-radiomics?color=3C8DCC)](https://pypi.org/project/pyradix-radiomics/)
 [![CI](https://github.com/ar1so/pyradix/actions/workflows/ci.yml/badge.svg)](https://github.com/ar1so/pyradix/actions/workflows/ci.yml)
 ![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-3C8DCC)
 ![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-3C8DCC)
@@ -37,15 +38,29 @@ What makes pyradix different:
 
 ## Install
 
-pyradix is not on PyPI yet. From the first release it installs with `pip install pyradix-radiomics` (the package you import is still `pyradix`). Until then, use Docker or build it from source.
+Ready-made packages exist for Python 3.10–3.13 on Linux, macOS and Windows, so you do not need Rust or a compiler. On PyPI the package is called **`pyradix-radiomics`**; in your code you still `import pyradix`.
 
-**With Docker** (nothing else to install):
+**With pip:**
+
+```bash
+pip install pyradix-radiomics
+```
+
+**With [uv](https://docs.astral.sh/uv/):**
+
+```bash
+uv add pyradix-radiomics                     # add it to your project
+uvx --from pyradix-radiomics pyradix --help  # or run the command line without installing
+```
+
+**With Docker** (no Python needed):
 
 ```bash
 docker build -t pyradix https://github.com/ar1so/pyradix.git
+docker run --rm -v "$PWD:/data" pyradix --help
 ```
 
-**From source.** You need Python 3.10–3.13 and Rust 1.85 or newer ([rustup.rs](https://rustup.rs)). It takes a few minutes.
+**From source**, only if you want to change pyradix itself. You need Python 3.10–3.13 and Rust 1.85 or newer ([rustup.rs](https://rustup.rs)):
 
 ```bash
 git clone https://github.com/ar1so/pyradix && cd pyradix

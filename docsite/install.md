@@ -1,10 +1,21 @@
 # Install
 
-pyradix is not on PyPI yet; from the first release it installs with `pip install pyradix-radiomics` (you still `import pyradix`). Until then, use Docker or build it from source.
+Ready-made packages exist for Python 3.10–3.13 on Linux, macOS and Windows; no Rust or compiler needed. On PyPI the package is **`pyradix-radiomics`**; in code you `import pyradix`.
+
+## pip
+
+```bash
+pip install pyradix-radiomics
+```
+
+## uv
+
+```bash
+uv add pyradix-radiomics                     # in a project
+uvx --from pyradix-radiomics pyradix --help  # run the command line without installing
+```
 
 ## Docker
-
-Nothing else to install:
 
 ```bash
 docker build -t pyradix https://github.com/ar1so/pyradix.git
@@ -13,7 +24,7 @@ docker run --rm -v "$PWD:/data" pyradix extract image.nii.gz mask.nii.gz --out f
 
 ## From source
 
-Build it yourself. You need **Rust 1.85+** ([rustup.rs](https://rustup.rs)) and Python 3.10–3.13.
+Only needed if you want to change pyradix itself. You need **Rust 1.85+** ([rustup.rs](https://rustup.rs)) and Python 3.10–3.13.
 
 ## macOS
 
