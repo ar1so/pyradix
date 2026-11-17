@@ -1,0 +1,37 @@
+# Validation binaries — hashes live in docs/datasets/MANIFEST.md
+data/**
+!data/README.md
+
+# Python
+__pycache__/
+benchmarks/results/tmp/
+benchmarks/figures/
+benchmarks/results/generated_results.tex
+.ci-logs/
+*.py[cod]
+.venv/
+.venv-pyrad/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+site-build/
+vcpkg/
+python/pyradix/*.so
+
+# Rust
+target/
+
+# Lung1 live checkpoints / long feature table (summary stays in metrics.json)
+tests/references/lung1/**/*.jsonl
+tests/references/lung1/features.csv
+tests/references/lung1/pairs_selected.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local ten-case spreadsheets
+tests/lung1/ten/

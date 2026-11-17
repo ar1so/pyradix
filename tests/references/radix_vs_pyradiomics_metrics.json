@@ -1,0 +1,763 @@
+{
+  "protocol": "docs/VALIDATION.md",
+  "settings": {
+    "interpolator": "sitkBSpline",
+    "label": 1,
+    "imageType": "Original",
+    "voxelArrayShift": 0,
+    "tol": 0.0001,
+    "timing": "extract-only after load",
+    "allowed_fail": {
+      "original_shape_MeshVolume": "d2_pat1 marching-cubes (256 vs 128)"
+    },
+    "known_gap_jobs": {
+      "d4_brain1__resample_2mm": "sitk 2 mm resample is not 1e-4 yet (VoxelVolume 15680 vs 15320; 106/107 keys miss)"
+    },
+    "configs": {
+      "bw5": {
+        "bin_width": 5.0,
+        "bin_count": null,
+        "resample": null
+      },
+      "bw25": {
+        "bin_width": 25.0,
+        "bin_count": null,
+        "resample": null
+      },
+      "bw50": {
+        "bin_width": 50.0,
+        "bin_count": null,
+        "resample": null
+      },
+      "resample_2mm": {
+        "bin_width": 25.0,
+        "bin_count": null,
+        "resample": [
+          2.0,
+          2.0,
+          2.0
+        ]
+      }
+    }
+  },
+  "pyradiomics_python": "PYRAD_PYTHON",
+  "radix_python": "project virtualenv",
+  "jobs": {
+    "d1_digital_phantom__bw5": {
+      "dataset": "d1_digital_phantom",
+      "config": "bw5",
+      "radix_seconds": [
+        0.003497917001368478,
+        0.0009679579998191912,
+        0.0008892500009096693
+      ],
+      "pyradiomics_seconds": [
+        0.08169129200000003,
+        0.017364874999999946,
+        0.017922167000000044
+      ],
+      "radix_median_s": 0.0009679579998191912,
+      "pyradiomics_median_s": 0.017922167000000044,
+      "speedup": 18.515438689847905,
+      "roi_voxels": 74,
+      "shape": [
+        4,
+        4,
+        5
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 6.908765094787738e-15,
+        "worst_feature": "original_glcm_Correlation",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d1_digital_phantom__bw25": {
+      "dataset": "d1_digital_phantom",
+      "config": "bw25",
+      "radix_seconds": [
+        0.0008559999987483025,
+        0.0007540839978901204,
+        0.0007364170014625415
+      ],
+      "pyradiomics_seconds": [
+        0.01714062500000002,
+        0.01757983299999999,
+        0.017434291000000046
+      ],
+      "radix_median_s": 0.0007540839978901204,
+      "pyradiomics_median_s": 0.017434291000000046,
+      "speedup": 23.119826237899353,
+      "roi_voxels": 74,
+      "shape": [
+        4,
+        4,
+        5
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 2.1823559477590234e-15,
+        "worst_feature": "original_firstorder_Kurtosis",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d1_digital_phantom__bw50": {
+      "dataset": "d1_digital_phantom",
+      "config": "bw50",
+      "radix_seconds": [
+        0.0007515840006817598,
+        0.0007540409969806205,
+        0.0009491249984421302
+      ],
+      "pyradiomics_seconds": [
+        0.01722933400000004,
+        0.016921082999999948,
+        0.016996583999999926
+      ],
+      "radix_median_s": 0.0007540409969806205,
+      "pyradiomics_median_s": 0.016996583999999926,
+      "speedup": 22.54066299850902,
+      "roi_voxels": 74,
+      "shape": [
+        4,
+        4,
+        5
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 2.1823559477590234e-15,
+        "worst_feature": "original_firstorder_Kurtosis",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d4_brain1__bw5": {
+      "dataset": "d4_brain1",
+      "config": "bw5",
+      "radix_seconds": [
+        0.22364899999956833,
+        0.207009374997142,
+        0.2054812500027765
+      ],
+      "pyradiomics_seconds": [
+        0.8479371250000001,
+        0.8407807920000001,
+        0.8422094169999998
+      ],
+      "radix_median_s": 0.207009374997142,
+      "pyradiomics_median_s": 0.8422094169999998,
+      "speedup": 4.0684602666503755,
+      "roi_voxels": 4137,
+      "shape": [
+        25,
+        256,
+        256
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 2.5737225734038645e-13,
+        "worst_feature": "original_glcm_ClusterShade",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d4_brain1__bw25": {
+      "dataset": "d4_brain1",
+      "config": "bw25",
+      "radix_seconds": [
+        0.11705437499767868,
+        0.11464758299916866,
+        0.11482179099766654
+      ],
+      "pyradiomics_seconds": [
+        0.20004633400000005,
+        0.18260824999999947,
+        0.18198624999999957
+      ],
+      "radix_median_s": 0.11482179099766654,
+      "pyradiomics_median_s": 0.18260824999999947,
+      "speedup": 1.5903623207175936,
+      "roi_voxels": 4137,
+      "shape": [
+        25,
+        256,
+        256
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 4.1512342614855493e-14,
+        "worst_feature": "original_shape_LeastAxisLength",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d4_brain1__bw50": {
+      "dataset": "d4_brain1",
+      "config": "bw50",
+      "radix_seconds": [
+        0.11396404200058896,
+        0.11334008400081075,
+        0.11344029200336081
+      ],
+      "pyradiomics_seconds": [
+        0.16545229200000033,
+        0.1627810830000005,
+        0.16517754199999946
+      ],
+      "radix_median_s": 0.11344029200336081,
+      "pyradiomics_median_s": 0.16517754199999946,
+      "speedup": 1.4560747251523811,
+      "roi_voxels": 4137,
+      "shape": [
+        25,
+        256,
+        256
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 1.5349612293289805e-13,
+        "worst_feature": "original_glcm_ClusterShade",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d4_brain1__resample_2mm": {
+      "dataset": "d4_brain1",
+      "config": "resample_2mm",
+      "radix_seconds": [
+        0.1407619169985992,
+        0.14017862499895273,
+        0.13992345799852046
+      ],
+      "pyradiomics_seconds": [
+        0.24287083399999965,
+        0.22186787499999916,
+        0.2244590000000004
+      ],
+      "radix_median_s": 0.14017862499895273,
+      "pyradiomics_median_s": 0.2244590000000004,
+      "speedup": 1.6012355664187556,
+      "roi_voxels": 4137,
+      "shape": [
+        25,
+        256,
+        256
+      ],
+      "resampled_shape": [
+        82,
+        100,
+        100
+      ],
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 1.2956386851332244e-14,
+        "worst_feature": "original_shape_LeastAxisLength",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d2_pat1__bw25": {
+      "dataset": "d2_pat1",
+      "config": "bw25",
+      "radix_seconds": [
+        2.050402374999976
+      ],
+      "pyradiomics_seconds": [
+        1.2421478339999998
+      ],
+      "radix_median_s": 2.050402374999976,
+      "pyradiomics_median_s": 1.2421478339999998,
+      "speedup": 0.6058068646160315,
+      "roi_voxels": 125256,
+      "shape": [
+        60,
+        201,
+        204
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 8.693470136751608e-13,
+        "worst_feature": "original_glszm_ZoneVariance",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    },
+    "d2_pat1__bw50": {
+      "dataset": "d2_pat1",
+      "config": "bw50",
+      "radix_seconds": [
+        2.0848199159991054
+      ],
+      "pyradiomics_seconds": [
+        1.1780680840000004
+      ],
+      "radix_median_s": 2.0848199159991054,
+      "pyradiomics_median_s": 1.1780680840000004,
+      "speedup": 0.565069469530387,
+      "roi_voxels": 125256,
+      "shape": [
+        60,
+        201,
+        204
+      ],
+      "resampled_shape": null,
+      "features": {
+        "n_radix": 108,
+        "n_pyradiomics": 107,
+        "n_shared": 107,
+        "n_pass": 107,
+        "n_fail": 0,
+        "n_allowed": 0,
+        "n_radix_extra": 1,
+        "n_missing": 0,
+        "worst_rel_err": 8.452915522485286e-13,
+        "worst_feature": "original_firstorder_RobustMeanAbsoluteDeviation",
+        "families": {
+          "firstorder": {
+            "n": 18,
+            "pass": 18,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glcm": {
+            "n": 24,
+            "pass": 24,
+            "fail": 0,
+            "allowed": 0
+          },
+          "gldm": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glrlm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "glszm": {
+            "n": 16,
+            "pass": 16,
+            "fail": 0,
+            "allowed": 0
+          },
+          "ngtdm": {
+            "n": 5,
+            "pass": 5,
+            "fail": 0,
+            "allowed": 0
+          },
+          "shape": {
+            "n": 14,
+            "pass": 14,
+            "fail": 0,
+            "allowed": 0
+          }
+        }
+      }
+    }
+  }
+}

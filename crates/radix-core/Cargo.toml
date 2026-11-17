@@ -1,0 +1,29 @@
+[package]
+name = "radix-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Radiomics math for Radix (IBSI + PyRadiomics compat)"
+
+[lib]
+name = "radix_core"
+path = "src/lib.rs"
+
+[dependencies]
+faer = { version = "0.19.4", default-features = false, features = ["std"] }
+# Used on macOS/Linux for GLCM MCC (LAPACK dgeev). Windows uses faer only —
+# MSVC OpenBLAS from vcpkg does not export the gfortran `dgeev_` ABI the
+# `lapack` crate calls, so a Windows OpenBLAS link never resolves.
+lapack = "0.20"
+
+# LAPACK `dgeev` is what NumPy uses for GLCM MCC. macOS links Accelerate.
+# Linux links the distro OpenBLAS (static when pkg-config can see it).
+[target.'cfg(target_os = "macos")'.dependencies]
+lapack-src = { version = "0.13", default-features = false, features = ["accelerate"] }
+
+[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
+lapack-src = { version = "0.13", default-features = false, features = ["openblas"] }
+# Link the distro OpenBLAS instead of compiling it. `make all` in a from-source
+# build runs OpenBLAS's own test suite, which aborts on this Linux image.
+openblas-src = { version = "0.10", default-features = false, features = ["system", "static", "cblas", "lapacke"] }

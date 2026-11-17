@@ -1,0 +1,95 @@
+# Lean CI: one Python per OS. Full wheel matrix lives in release.yml (tag/manual only).
+# macOS minutes are 10× Linux on private repos — keep macOS to one job.
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} py${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+          - os: macos-latest
+            python: "3.12"
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install OpenBLAS
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y pkg-config gfortran libopenblas-dev patchelf
+
+      - uses: dtolnay/rust-toolchain@stable
+        if: runner.os != 'macOS'
+
+      - uses: dtolnay/rust-toolchain@stable
+        if: runner.os == 'macOS'
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Build wheel
+        if: runner.os != 'macOS'
+        run: python -m pip install -U pip "maturin>=1.14,<1.16" && python -m maturin build --release -o dist
+
+      - name: Build universal2 wheel
+        if: runner.os == 'macOS'
+        run: python -m pip install -U pip "maturin>=1.14,<1.16" && python -m maturin build --release --target universal2-apple-darwin -o dist
+
+      - name: Test installed wheel
+        run: python scripts/ci_install_test.py
+
+  # Publishable Linux wheels are built only on release to save Actions minutes.
+  # Optional: re-enable with workflow_dispatch input later.
+
+  docker:
+    name: docker image
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t pyradix .
+
+      - name: Extract features from the PyRadiomics brain1 sample
+        run: |
+          mkdir -p sample && cd sample
+          curl -sSLO https://raw.githubusercontent.com/AIM-Harvard/pyradiomics/master/data/brain1_image.nrrd
+          curl -sSLO https://raw.githubusercontent.com/AIM-Harvard/pyradiomics/master/data/brain1_label.nrrd
+          chmod a+rwx .
+          docker run --rm -v "$PWD:/data" pyradix --version
+          docker run --rm -v "$PWD:/data" pyradix extract brain1_image.nrrd brain1_label.nrrd --out features.csv
+          python3 - <<'PY'
+          import csv
+          row = next(csv.DictReader(open("features.csv")))
+          n = sum(k.startswith("original_") for k in row)
+          print(n, "features; VoxelVolume", row["original_shape_VoxelVolume"])
+          assert n == 108, n
+          PY

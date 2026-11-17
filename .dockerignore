@@ -1,0 +1,11 @@
+.git
+target
+dist
+.venv
+**/__pycache__
+**/*.so
+data
+site-build
+docs/brand/drafts
+docs/brand/try-blue
+docs/design

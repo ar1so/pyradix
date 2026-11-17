@@ -1,0 +1,9 @@
+[workspace]
+members = ["crates/radix-core", "crates/radix-py"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+rust-version = "1.85"

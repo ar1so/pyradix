@@ -1,0 +1,545 @@
+{
+  "protocol": {
+    "bin_width": 25,
+    "log_series": "pyradiomics-mode LoG sigma 2 mm, first-order features only",
+    "memory": "ru_maxrss of the child process in kilobytes",
+    "random_seed": null,
+    "size_series": "Public IBSI-1 PAT1. Mask keeps the requested number of voxels nearest the centroid (mergesort). None means the full mask. Threads pinned to 4.",
+    "thread_series": "Public brain1, and PAT1 at 1 and 4 threads. taskset plus OPENBLAS_NUM_THREADS, OMP_NUM_THREADS, and ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS.",
+    "timing": "one untimed warmup after load; perf_counter around extract/execute"
+  },
+  "rows": [
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 155868,
+      "median_s": 0.029304366999895137,
+      "requested_roi_voxels": 2000,
+      "roi_voxels_reported": 2000,
+      "seconds": [
+        0.032080249000046024,
+        0.029304366999895137,
+        0.028266342000051736
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 210880,
+      "median_s": 0.206359564999957,
+      "requested_roi_voxels": 2000,
+      "roi_voxels_reported": 2000,
+      "seconds": [
+        0.20537227500017252,
+        0.20768681799995647,
+        0.206359564999957
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 156040,
+      "median_s": 0.05552095399980317,
+      "requested_roi_voxels": 8000,
+      "roi_voxels_reported": 8000,
+      "seconds": [
+        0.05695604800007459,
+        0.05552095399980317,
+        0.05463321000001997
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 211736,
+      "median_s": 0.2337229249999382,
+      "requested_roi_voxels": 8000,
+      "roi_voxels_reported": 8000,
+      "seconds": [
+        0.22750515600000654,
+        0.23900362999984281,
+        0.2337229249999382
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 156732,
+      "median_s": 0.18212096100000963,
+      "requested_roi_voxels": 32000,
+      "roi_voxels_reported": 32000,
+      "seconds": [
+        0.1827326070001618,
+        0.18212096100000963,
+        0.18112460399993324
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 218860,
+      "median_s": 0.3096308029998909,
+      "requested_roi_voxels": 32000,
+      "roi_voxels_reported": 32000,
+      "seconds": [
+        0.30894716900002095,
+        0.3161641890001192,
+        0.3096308029998909
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 162676,
+      "median_s": 2.137308859999962,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        2.1376583940000273,
+        2.1369593259998965
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 211300,
+      "median_s": 1.110323526000002,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        1.1103359480000563,
+        1.1103111039999476
+      ],
+      "series": "roi_size",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 132592,
+      "median_s": 0.07952355899988106,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.08451320199992551,
+        0.08049949400015066,
+        0.07933859099989604,
+        0.07952355899988106,
+        0.07878375500013135
+      ],
+      "series": "threads_original",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 184548,
+      "median_s": 0.2019949779999024,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.20322596099981638,
+        0.2019949779999024,
+        0.20138925900005233,
+        0.20191264400000364,
+        0.2022896999999375
+      ],
+      "series": "threads_original",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0,
+        1
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 132688,
+      "median_s": 0.08067445300002873,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.08461662600007003,
+        0.08059133899996596,
+        0.08020399300016834,
+        0.08067445300002873,
+        0.0811227429999235
+      ],
+      "series": "threads_original",
+      "threads": 2
+    },
+    {
+      "affinity": [
+        0,
+        1
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 184516,
+      "median_s": 0.1731819919998543,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.175067818999878,
+        0.1731819919998543,
+        0.17255467600011798,
+        0.1738002580000284,
+        0.1726588090000405
+      ],
+      "series": "threads_original",
+      "threads": 2
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 120252,
+      "median_s": 0.07998160499982987,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.08159645000000637,
+        0.08000349399981133,
+        0.07998160499982987,
+        0.07994449800003167,
+        0.07957887599991409
+      ],
+      "series": "threads_original",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 184808,
+      "median_s": 0.15850952199980384,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.15983181100000365,
+        0.15850952199980384,
+        0.15760991599995577,
+        0.1585232760000963,
+        0.15716810599997189
+      ],
+      "series": "threads_original",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 163836,
+      "median_s": 0.18523516999994172,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.1947626549999768,
+        0.18523516999994172,
+        0.18409393799993268
+      ],
+      "series": "threads_log",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 184664,
+      "median_s": 0.3601722329999575,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.3601722329999575,
+        0.3606907260000298,
+        0.3595526899998731
+      ],
+      "series": "threads_log",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0,
+        1
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 163992,
+      "median_s": 0.11265405000017381,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.1213148290000845,
+        0.11265405000017381,
+        0.1111239269998805
+      ],
+      "series": "threads_log",
+      "threads": 2
+    },
+    {
+      "affinity": [
+        0,
+        1
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 184496,
+      "median_s": 0.2361810059999243,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.23809106999988217,
+        0.2359537930001352,
+        0.2361810059999243
+      ],
+      "series": "threads_log",
+      "threads": 2
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d4_brain1",
+      "engine": "radix",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 163640,
+      "median_s": 0.0880739619999531,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.09126423600014277,
+        0.0880739619999531,
+        0.0870122410001386
+      ],
+      "series": "threads_log",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d4_brain1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "log_firstorder",
+      "max_rss_kb": 185564,
+      "median_s": 0.17625599899997724,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 4137,
+      "seconds": [
+        0.175225459000103,
+        0.17625599899997724,
+        0.17633190600008675
+      ],
+      "series": "threads_log",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 162592,
+      "median_s": 2.1696060720000787,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        2.1948475789999975,
+        2.14436456500016
+      ],
+      "series": "threads_pat1_original",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 209060,
+      "median_s": 1.1836353040000631,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        1.1777578539999922,
+        1.189512754000134
+      ],
+      "series": "threads_pat1_original",
+      "threads": 1
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "radix",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 162704,
+      "median_s": 2.1411910865000436,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        2.1425422019999587,
+        2.1398399710001286
+      ],
+      "series": "threads_pat1_original",
+      "threads": 4
+    },
+    {
+      "affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dataset": "d2_pat1",
+      "engine": "pyradiomics",
+      "error": null,
+      "kind": "original",
+      "max_rss_kb": 214404,
+      "median_s": 1.1038473269999258,
+      "requested_roi_voxels": null,
+      "roi_voxels_reported": 125256,
+      "seconds": [
+        1.1043334159999176,
+        1.103361237999934
+      ],
+      "series": "threads_pat1_original",
+      "threads": 4
+    }
+  ]
+}

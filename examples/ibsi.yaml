@@ -1,0 +1,6 @@
+mode: ibsi
+bin_width: 25.0
+interpolator: bspline
+image_types:
+  - Original
+label: 1

@@ -1,0 +1,12 @@
+# IBSI-1 PAT1 configuration E (3D, 2 mm, tricubic image + trilinear ROI, range + 3σ, FBN 32).
+mode: ibsi
+bin_width: null
+bin_count: 32
+resampled_pixel_spacing: [2.0, 2.0, 2.0]
+interpolator: bspline
+mask_interpolator: linear
+resegment_range: [-1000, 400]
+outlier_sigma: 3.0
+image_types:
+  - Original
+label: 1

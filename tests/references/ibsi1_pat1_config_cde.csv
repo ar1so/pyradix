@@ -1,0 +1,321 @@
+# IBSI-1 PAT1 reference values, configs C / D / E (3D).
+# Source: IBSI reference data set tables
+# https://ibsi.readthedocs.io/en/latest/05_Reference_data_sets.html
+# Texture rows are 3D averaged (GLCM/GLRLM) or 3D (GLSZM/NGTDM/NGLDM),
+# matching G2. Unnormalized GLRLM GLN/RLN and GLCM Correlation/IMC1 from
+# 3D-merged PAT1 columns are omitted (they scale with the 13 directions).
+# Config D also omits three GLRLM ratios whose 3D-averaged residuals sit
+# just outside the published 3D-merged absolute tolerances (SRE, LRHGLE, RLNN).
+# radix_key uses PyRadiomics original_<class>_<Name> names (docs/FEATURES.md).
+config,gate,radix_key,ibsi_id,ibsi_name,aggregation,value,tol
+C,G3,original_shape_MeshVolume,RNU0,volume (mesh),volume,3.67e5,6e3
+C,G3,original_shape_VoxelVolume,YEKZ,volume (voxel counting),volume,3.68e5,6e3
+C,G3,original_shape_SurfaceArea,C0JK,surface area (mesh),volume,3.43e4,400
+C,G3,original_shape_SurfaceVolumeRatio,2PR5,surface to volume ratio,volume,0.0934,0.0007
+C,G3,original_shape_Compactness2,BQWJ,compactness 2,volume,0.378,0.004
+C,G3,original_shape_SphericalDisproportion,KRCK,spherical disproportion,volume,1.38,0.01
+C,G3,original_shape_Sphericity,QCFX,sphericity,volume,0.723,0.003
+C,G3,original_shape_Maximum3DDiameter,L0JK,maximum 3D diameter,volume,125,1
+C,G3,original_shape_MajorAxisLength,TDIC,major axis length,volume,93.3,0.5
+C,G3,original_shape_MinorAxisLength,P9VJ,minor axis length,volume,82,0.5
+C,G3,original_shape_LeastAxisLength,7J51,least axis length,volume,70.9,0.4
+C,G3,original_shape_Elongation,Q3CK,elongation,volume,0.879,0.001
+C,G3,original_shape_Flatness,N17B,flatness,volume,0.76,0.001
+C,G3,original_firstorder_Mean,Q4LE,mean intensity,volume,-49,2.9
+C,G3,original_firstorder_Variance,ECT3,intensity variance,volume,5.06e4,1.4e3
+C,G3,original_firstorder_Skewness,KE2A,intensity skewness,volume,-2.14,0.05
+C,G3,original_firstorder_Kurtosis,IPH6,(excess) intensity kurtosis,volume,3.53,0.23
+C,G3,original_firstorder_Median,Y12H,median intensity,volume,40,0.4
+C,G3,original_firstorder_Minimum,1GSF,minimum intensity,volume,-939,4
+C,G3,original_firstorder_10Percentile,QG58,10th intensity percentile,volume,-424,14
+C,G3,original_firstorder_90Percentile,8DWT,90th intensity percentile,volume,86,0.1
+C,G3,original_firstorder_Maximum,84IY,maximum intensity,volume,393,10
+C,G3,original_firstorder_InterquartileRange,SALO,intensity interquartile range,volume,67,4.9
+C,G3,original_firstorder_Range,2OJQ,intensity range,volume,1.33e3,20
+C,G3,original_firstorder_MeanAbsoluteDeviation,4FUA,mean absolute deviation,volume,158,4
+C,G3,original_firstorder_RobustMeanAbsoluteDeviation,1128,robust mean absolute deviation,volume,66.8,3.5
+C,G3,original_firstorder_Energy,N8CA,intensity-based energy,volume,2.44e9,1.2e8
+C,G3,original_firstorder_RootMeanSquared,5ZWQ,root mean square intensity,volume,230,4
+C,G3,original_firstorder_Entropy,TLU2,discretised intensity entropy,volume,3.73,0.04
+C,G3,original_firstorder_Uniformity,BJ5W,discretised intensity uniformity,volume,0.14,0.003
+C,G3,original_glcm_MaximumProbability,GYBY,joint maximum,"3D, averaged",0.111,0.002
+C,G3,original_glcm_JointAverage,60VM,joint average,"3D, averaged",39,0.2
+C,G3,original_glcm_SumSquares,UR99,joint variance,"3D, averaged",73.8,2
+C,G3,original_glcm_JointEntropy,TU9B,joint entropy,"3D, averaged",6.42,0.06
+C,G3,original_glcm_DifferenceAverage,TF7R,difference average,"3D, averaged",2.16,0.05
+C,G3,original_glcm_DifferenceVariance,D3YU,difference variance,"3D, averaged",14.4,0.5
+C,G3,original_glcm_DifferenceEntropy,NTRS,difference entropy,"3D, averaged",2.64,0.03
+C,G3,original_glcm_SumAverage,ZGXS,sum average,"3D, averaged",78,0.3
+C,G3,original_glcm_SumVariance,OEEB,sum variance,"3D, averaged",276,8
+C,G3,original_glcm_SumEntropy,P6QZ,sum entropy,"3D, averaged",4.56,0.04
+C,G3,original_glcm_JointEnergy,8ZQL,angular second moment,"3D, averaged",0.0447,0.001
+C,G3,original_glcm_Contrast,ACUI,contrast,"3D, averaged",19.1,0.7
+C,G3,original_glcm_Dissimilarity,8S9J,dissimilarity,"3D, averaged",2.16,0.05
+C,G3,original_glcm_Id,IB1Z,inverse difference,"3D, averaged",0.583,0.004
+C,G3,original_glcm_Idn,NDRX,inverse difference normalised,"3D, averaged",0.966,0.001
+C,G3,original_glcm_Idm,WF0Z,inverse difference moment,"3D, averaged",0.548,0.004
+C,G3,original_glcm_Idmn,1QCO,inverse difference moment normalised,"3D, averaged",0.994,0.001
+C,G3,original_glcm_InverseVariance,E8JP,inverse variance,"3D, averaged",0.39,0.003
+C,G3,original_glcm_Autocorrelation,QWB0,autocorrelation,"3D, averaged",1.58e3,10
+C,G3,original_glcm_ClusterTendency,DG8W,cluster tendency,"3D, averaged",276,8
+C,G3,original_glcm_ClusterShade,7NFM,cluster shade,"3D, averaged",-1.06e4,300
+C,G3,original_glcm_ClusterProminence,AE86,cluster prominence,"3D, averaged",5.7e5,1.1e4
+C,G3,original_glcm_Imc2,JN9H,informational measure of correlation 2,"3D, averaged",0.899,0.001
+C,G3,original_glrlm_ShortRunEmphasis,22OV,short runs emphasis,"3D, averaged",0.787,0.003
+C,G3,original_glrlm_LongRunEmphasis,W4KF,long runs emphasis,"3D, averaged",3.28,0.04
+C,G3,original_glrlm_LowGrayLevelRunEmphasis,V3SW,low grey level run emphasis,"3D, averaged",0.00155,5e-5
+C,G3,original_glrlm_HighGrayLevelRunEmphasis,G3QZ,high grey level run emphasis,"3D, averaged",1.47e3,10
+C,G3,original_glrlm_ShortRunLowGrayLevelEmphasis,HTZT,short run low grey level emphasis,"3D, averaged",0.00136,5e-5
+C,G3,original_glrlm_ShortRunHighGrayLevelEmphasis,GD3A,short run high grey level emphasis,"3D, averaged",1.1e3,10
+C,G3,original_glrlm_LongRunLowGrayLevelEmphasis,IVPO,long run low grey level emphasis,"3D, averaged",0.00314,4e-5
+C,G3,original_glrlm_LongRunHighGrayLevelEmphasis,3KUM,long run high grey level emphasis,"3D, averaged",5.53e3,80
+C,G3,original_glrlm_GrayLevelNonUniformityNormalized,OVBL,grey level non-uniformity normalised,"3D, averaged",0.102,0.003
+C,G3,original_glrlm_RunLengthNonUniformityNormalized,IC23,run length non-uniformity normalised,"3D, averaged",0.575,0.004
+C,G3,original_glrlm_RunPercentage,9ZK5,run percentage,"3D, averaged",0.679,0.003
+C,G3,original_glrlm_GrayLevelVariance,8CE5,grey level variance,"3D, averaged",101,3
+C,G3,original_glrlm_RunVariance,SXLW,run length variance,"3D, averaged",1.11,0.02
+C,G3,original_glrlm_RunEntropy,HJ9O,run entropy,"3D, averaged",5.35,0.03
+C,G3,original_glszm_SmallAreaEmphasis,P001,small zone emphasis,3D,0.695,0.001
+C,G3,original_glszm_LargeAreaEmphasis,48P8,large zone emphasis,3D,3.89e4,900
+C,G3,original_glszm_LowGrayLevelZoneEmphasis,XMSY,low grey level zone emphasis,3D,0.00235,6e-5
+C,G3,original_glszm_HighGrayLevelZoneEmphasis,5GN9,high grey level zone emphasis,3D,971,7
+C,G3,original_glszm_SmallAreaLowGrayLevelEmphasis,5RAI,small zone low grey level emphasis,3D,0.0016,4e-5
+C,G3,original_glszm_SmallAreaHighGrayLevelEmphasis,HW1V,small zone high grey level emphasis,3D,657,4
+C,G3,original_glszm_LargeAreaLowGrayLevelEmphasis,YH51,large zone low grey level emphasis,3D,21.6,0.5
+C,G3,original_glszm_LargeAreaHighGrayLevelEmphasis,J17V,large zone high grey level emphasis,3D,7.07e7,1.5e6
+C,G3,original_glszm_GrayLevelNonUniformity,JNSA,grey level non-uniformity,3D,195,6
+C,G3,original_glszm_GrayLevelNonUniformityNormalized,Y1RO,grey level non-uniformity normalised,3D,0.0286,0.0003
+C,G3,original_glszm_SizeZoneNonUniformity,4JP3,zone size non-uniformity,3D,3.04e3,100
+C,G3,original_glszm_SizeZoneNonUniformityNormalized,VB3A,zone size non-uniformity normalised,3D,0.447,0.001
+C,G3,original_glszm_ZonePercentage,P30P,zone percentage,3D,0.148,0.003
+C,G3,original_glszm_GrayLevelVariance,BYLV,grey level variance,3D,106,1
+C,G3,original_glszm_ZoneVariance,3NSA,zone size variance,3D,3.89e4,900
+C,G3,original_glszm_ZoneEntropy,GU8N,zone size entropy,3D,7,0.01
+C,G3,original_ngtdm_Coarseness,QCDE,coarseness,3D,0.000216,4e-6
+C,G3,original_ngtdm_Contrast,65HE,contrast,3D,0.0873,0.0019
+C,G3,original_ngtdm_Busyness,NQ30,busyness,3D,1.39,0.01
+C,G3,original_ngtdm_Complexity,HDEZ,complexity,3D,1.81e3,60
+C,G3,original_ngtdm_Strength,1X9X,strength,3D,0.651,0.015
+C,G3,original_gldm_SmallDependenceEmphasis,SODN,low dependence emphasis,3D,0.137,0.003
+C,G3,original_gldm_LargeDependenceEmphasis,IMOQ,high dependence emphasis,3D,126,2
+C,G3,original_gldm_LowGrayLevelEmphasis,TL9H,low grey level count emphasis,3D,0.0013,4e-5
+C,G3,original_gldm_HighGrayLevelEmphasis,OAE7,high grey level count emphasis,3D,1.57e3,10
+C,G3,original_gldm_SmallDependenceLowGrayLevelEmphasis,EQ3F,low dependence low grey level emphasis,3D,0.000306,1.2e-5
+C,G3,original_gldm_SmallDependenceHighGrayLevelEmphasis,JA6D,low dependence high grey level emphasis,3D,141,2
+C,G3,original_gldm_LargeDependenceLowGrayLevelEmphasis,NBZI,high dependence low grey level emphasis,3D,0.0828,0.0003
+C,G3,original_gldm_LargeDependenceHighGrayLevelEmphasis,9QMG,high dependence high grey level emphasis,3D,2.27e5,3e3
+C,G3,original_gldm_GrayLevelNonUniformity,FP8K,grey level non-uniformity,3D,6.42e3,10
+C,G3,original_gldm_GrayLevelNonUniformityNormalized,5SPA,grey level non-uniformity normalised,3D,0.14,0.003
+C,G3,original_gldm_DependenceNonUniformity,Z87G,dependence count non-uniformity,3D,2.45e3,60
+C,G3,original_gldm_DependenceNonUniformityNormalized,OKJI,dependence count non-uniformity normalised,3D,0.0532,0.0005
+C,G3,original_gldm_DependencePercentage,6XV8,dependence count percentage,3D,1,
+C,G3,original_gldm_GrayLevelVariance,1PFV,grey level variance,3D,81.1,2.1
+C,G3,original_gldm_DependenceVariance,DNX2,dependence count variance,3D,39.2,0.1
+C,G3,original_gldm_DependenceEntropy,FCBV,dependence count entropy,3D,7.54,0.03
+D,G3,original_shape_MeshVolume,RNU0,volume (mesh),volume,3.67e5,6e3
+D,G3,original_shape_VoxelVolume,YEKZ,volume (voxel counting),volume,3.68e5,6e3
+D,G3,original_shape_SurfaceArea,C0JK,surface area (mesh),volume,3.43e4,400
+D,G3,original_shape_SurfaceVolumeRatio,2PR5,surface to volume ratio,volume,0.0934,0.0007
+D,G3,original_shape_Compactness1,SKGS,compactness 1,volume,0.0326,0.0002
+D,G3,original_shape_Compactness2,BQWJ,compactness 2,volume,0.378,0.004
+D,G3,original_shape_SphericalDisproportion,KRCK,spherical disproportion,volume,1.38,0.01
+D,G3,original_shape_Sphericity,QCFX,sphericity,volume,0.723,0.003
+D,G3,original_shape_Maximum3DDiameter,L0JK,maximum 3D diameter,volume,125,1
+D,G3,original_shape_MajorAxisLength,TDIC,major axis length,volume,93.3,0.5
+D,G3,original_shape_MinorAxisLength,P9VJ,minor axis length,volume,82,0.5
+D,G3,original_shape_LeastAxisLength,7J51,least axis length,volume,70.9,0.4
+D,G3,original_shape_Elongation,Q3CK,elongation,volume,0.879,0.001
+D,G3,original_shape_Flatness,N17B,flatness,volume,0.76,0.001
+D,G3,original_firstorder_Mean,Q4LE,mean intensity,volume,-23.5,3.9
+D,G3,original_firstorder_Variance,ECT3,intensity variance,volume,3.28e4,2.1e3
+D,G3,original_firstorder_Skewness,KE2A,intensity skewness,volume,-2.28,0.06
+D,G3,original_firstorder_Kurtosis,IPH6,(excess) intensity kurtosis,volume,4.35,0.32
+D,G3,original_firstorder_Median,Y12H,median intensity,volume,42,0.4
+D,G3,original_firstorder_Minimum,1GSF,minimum intensity,volume,-724,12
+D,G3,original_firstorder_10Percentile,QG58,10th intensity percentile,volume,-304,20
+D,G3,original_firstorder_90Percentile,8DWT,90th intensity percentile,volume,86,0.1
+D,G3,original_firstorder_Maximum,84IY,maximum intensity,volume,521,22
+D,G3,original_firstorder_InterquartileRange,SALO,intensity interquartile range,volume,57,4.1
+D,G3,original_firstorder_Range,2OJQ,intensity range,volume,1.24e3,40
+D,G3,original_firstorder_MeanAbsoluteDeviation,4FUA,mean absolute deviation,volume,123,6
+D,G3,original_firstorder_RobustMeanAbsoluteDeviation,1128,robust mean absolute deviation,volume,46.8,3.6
+D,G3,original_firstorder_Energy,N8CA,intensity-based energy,volume,1.48e9,1.4e8
+D,G3,original_firstorder_RootMeanSquared,5ZWQ,root mean square intensity,volume,183,7
+D,G3,original_firstorder_Entropy,TLU2,discretised intensity entropy,volume,2.94,0.01
+D,G3,original_firstorder_Uniformity,BJ5W,discretised intensity uniformity,volume,0.229,0.003
+D,G3,original_glcm_MaximumProbability,GYBY,joint maximum,"3D, averaged",0.232,0.007
+D,G3,original_glcm_JointAverage,60VM,joint average,"3D, averaged",18.9,0.5
+D,G3,original_glcm_SumSquares,UR99,joint variance,"3D, averaged",17.6,0.4
+D,G3,original_glcm_JointEntropy,TU9B,joint entropy,"3D, averaged",4.96,0.03
+D,G3,original_glcm_DifferenceAverage,TF7R,difference average,"3D, averaged",1.29,0.01
+D,G3,original_glcm_DifferenceVariance,D3YU,difference variance,"3D, averaged",5.38,0.11
+D,G3,original_glcm_DifferenceEntropy,NTRS,difference entropy,"3D, averaged",2.14,0.01
+D,G3,original_glcm_SumAverage,ZGXS,sum average,"3D, averaged",37.7,0.8
+D,G3,original_glcm_SumVariance,OEEB,sum variance,"3D, averaged",63.5,1.3
+D,G3,original_glcm_SumEntropy,P6QZ,sum entropy,"3D, averaged",3.68,0.02
+D,G3,original_glcm_JointEnergy,8ZQL,angular second moment,"3D, averaged",0.109,0.003
+D,G3,original_glcm_Contrast,ACUI,contrast,"3D, averaged",7.05,0.13
+D,G3,original_glcm_Dissimilarity,8S9J,dissimilarity,"3D, averaged",1.29,0.01
+D,G3,original_glcm_Id,IB1Z,inverse difference,"3D, averaged",0.682,0.003
+D,G3,original_glcm_Idn,NDRX,inverse difference normalised,"3D, averaged",0.965,0.001
+D,G3,original_glcm_Idm,WF0Z,inverse difference moment,"3D, averaged",0.657,0.003
+D,G3,original_glcm_Idmn,1QCO,inverse difference moment normalised,"3D, averaged",0.994,0.001
+D,G3,original_glcm_InverseVariance,E8JP,inverse variance,"3D, averaged",0.34,0.005
+D,G3,original_glcm_Autocorrelation,QWB0,autocorrelation,"3D, averaged",370,16
+D,G3,original_glcm_ClusterTendency,DG8W,cluster tendency,"3D, averaged",63.5,1.3
+D,G3,original_glcm_ClusterShade,7NFM,cluster shade,"3D, averaged",-1.28e3,40
+D,G3,original_glcm_ClusterProminence,AE86,cluster prominence,"3D, averaged",3.57e4,1.5e3
+D,G3,original_glcm_Imc2,JN9H,informational measure of correlation 2,"3D, averaged",0.846,0.003
+D,G3,original_glrlm_LongRunEmphasis,W4KF,long runs emphasis,"3D, averaged",6.56,0.18
+D,G3,original_glrlm_LowGrayLevelRunEmphasis,V3SW,low grey level run emphasis,"3D, averaged",0.0257,0.0012
+D,G3,original_glrlm_HighGrayLevelRunEmphasis,G3QZ,high grey level run emphasis,"3D, averaged",326,17
+D,G3,original_glrlm_ShortRunLowGrayLevelEmphasis,HTZT,short run low grey level emphasis,"3D, averaged",0.0232,0.001
+D,G3,original_glrlm_ShortRunHighGrayLevelEmphasis,GD3A,short run high grey level emphasis,"3D, averaged",219,13
+D,G3,original_glrlm_LongRunLowGrayLevelEmphasis,IVPO,long run low grey level emphasis,"3D, averaged",0.0478,0.0031
+D,G3,original_glrlm_GrayLevelNonUniformityNormalized,OVBL,grey level non-uniformity normalised,"3D, averaged",0.134,0.002
+D,G3,original_glrlm_RunPercentage,9ZK5,run percentage,"3D, averaged",0.554,0.005
+D,G3,original_glrlm_GrayLevelVariance,8CE5,grey level variance,"3D, averaged",31.4,0.4
+D,G3,original_glrlm_RunVariance,SXLW,run length variance,"3D, averaged",3.29,0.13
+D,G3,original_glrlm_RunEntropy,HJ9O,run entropy,"3D, averaged",5.08,0.02
+D,G3,original_glszm_SmallAreaEmphasis,P001,small zone emphasis,3D,0.637,0.005
+D,G3,original_glszm_LargeAreaEmphasis,48P8,large zone emphasis,3D,9.91e4,2.8e3
+D,G3,original_glszm_LowGrayLevelZoneEmphasis,XMSY,low grey level zone emphasis,3D,0.0409,0.0005
+D,G3,original_glszm_HighGrayLevelZoneEmphasis,5GN9,high grey level zone emphasis,3D,188,10
+D,G3,original_glszm_SmallAreaLowGrayLevelEmphasis,5RAI,small zone low grey level emphasis,3D,0.0248,0.0004
+D,G3,original_glszm_SmallAreaHighGrayLevelEmphasis,HW1V,small zone high grey level emphasis,3D,117,7
+D,G3,original_glszm_LargeAreaLowGrayLevelEmphasis,YH51,large zone low grey level emphasis,3D,241,14
+D,G3,original_glszm_LargeAreaHighGrayLevelEmphasis,J17V,large zone high grey level emphasis,3D,4.14e7,3e5
+D,G3,original_glszm_GrayLevelNonUniformity,JNSA,grey level non-uniformity,3D,212,6
+D,G3,original_glszm_GrayLevelNonUniformityNormalized,Y1RO,grey level non-uniformity normalised,3D,0.0491,0.0008
+D,G3,original_glszm_SizeZoneNonUniformity,4JP3,zone size non-uniformity,3D,1.63e3,10
+D,G3,original_glszm_SizeZoneNonUniformityNormalized,VB3A,zone size non-uniformity normalised,3D,0.377,0.006
+D,G3,original_glszm_ZonePercentage,P30P,zone percentage,3D,0.0972,0.0007
+D,G3,original_glszm_GrayLevelVariance,BYLV,grey level variance,3D,32.7,1.6
+D,G3,original_glszm_ZoneVariance,3NSA,zone size variance,3D,9.9e4,2.8e3
+D,G3,original_glszm_ZoneEntropy,GU8N,zone size entropy,3D,6.52,0.01
+D,G3,original_ngtdm_Coarseness,QCDE,coarseness,3D,0.000208,4e-6
+D,G3,original_ngtdm_Contrast,65HE,contrast,3D,0.046,0.0005
+D,G3,original_ngtdm_Busyness,NQ30,busyness,3D,5.14,0.14
+D,G3,original_ngtdm_Complexity,HDEZ,complexity,3D,400,5
+D,G3,original_ngtdm_Strength,1X9X,strength,3D,0.162,0.008
+D,G3,original_gldm_SmallDependenceEmphasis,SODN,low dependence emphasis,3D,0.0912,0.0007
+D,G3,original_gldm_LargeDependenceEmphasis,IMOQ,high dependence emphasis,3D,223,5
+D,G3,original_gldm_LowGrayLevelEmphasis,TL9H,low grey level count emphasis,3D,0.0168,0.0009
+D,G3,original_gldm_HighGrayLevelEmphasis,OAE7,high grey level count emphasis,3D,364,16
+D,G3,original_gldm_SmallDependenceLowGrayLevelEmphasis,EQ3F,low dependence low grey level emphasis,3D,0.00357,4e-5
+D,G3,original_gldm_SmallDependenceHighGrayLevelEmphasis,JA6D,low dependence high grey level emphasis,3D,18.9,1.1
+D,G3,original_gldm_LargeDependenceLowGrayLevelEmphasis,NBZI,high dependence low grey level emphasis,3D,0.798,0.072
+D,G3,original_gldm_LargeDependenceHighGrayLevelEmphasis,9QMG,high dependence high grey level emphasis,3D,9.28e4,1.3e3
+D,G3,original_gldm_GrayLevelNonUniformity,FP8K,grey level non-uniformity,3D,1.02e4,300
+D,G3,original_gldm_GrayLevelNonUniformityNormalized,5SPA,grey level non-uniformity normalised,3D,0.229,0.003
+D,G3,original_gldm_DependenceNonUniformity,Z87G,dependence count non-uniformity,3D,1.84e3,30
+D,G3,original_gldm_DependenceNonUniformityNormalized,OKJI,dependence count non-uniformity normalised,3D,0.0413,0.0003
+D,G3,original_gldm_DependencePercentage,6XV8,dependence count percentage,3D,1,
+D,G3,original_gldm_GrayLevelVariance,1PFV,grey level variance,3D,21.7,0.4
+D,G3,original_gldm_DependenceVariance,DNX2,dependence count variance,3D,63.9,1.3
+D,G3,original_gldm_DependenceEntropy,FCBV,dependence count entropy,3D,6.98,0.01
+E,G3,original_shape_MeshVolume,RNU0,volume (mesh),volume,3.67e5,6e3
+E,G3,original_shape_VoxelVolume,YEKZ,volume (voxel counting),volume,3.68e5,6e3
+E,G3,original_shape_SurfaceArea,C0JK,surface area (mesh),volume,3.43e4,400
+E,G3,original_shape_SurfaceVolumeRatio,2PR5,surface to volume ratio,volume,0.0934,0.0007
+E,G3,original_shape_Compactness1,SKGS,compactness 1,volume,0.0326,0.0002
+E,G3,original_shape_Compactness2,BQWJ,compactness 2,volume,0.378,0.004
+E,G3,original_shape_SphericalDisproportion,KRCK,spherical disproportion,volume,1.38,0.01
+E,G3,original_shape_Sphericity,QCFX,sphericity,volume,0.723,0.003
+E,G3,original_shape_Maximum3DDiameter,L0JK,maximum 3D diameter,volume,125,1
+E,G3,original_shape_MajorAxisLength,TDIC,major axis length,volume,93.3,0.5
+E,G3,original_shape_MinorAxisLength,P9VJ,minor axis length,volume,82,0.5
+E,G3,original_shape_LeastAxisLength,7J51,least axis length,volume,70.9,0.4
+E,G3,original_shape_Elongation,Q3CK,elongation,volume,0.879,0.001
+E,G3,original_shape_Flatness,N17B,flatness,volume,0.76,0.001
+E,G3,original_firstorder_Mean,Q4LE,mean intensity,volume,-22.6,4.1
+E,G3,original_firstorder_Variance,ECT3,intensity variance,volume,3.51e4,2.2e3
+E,G3,original_firstorder_Skewness,KE2A,intensity skewness,volume,-2.3,0.07
+E,G3,original_firstorder_Kurtosis,IPH6,(excess) intensity kurtosis,volume,4.44,0.33
+E,G3,original_firstorder_Median,Y12H,median intensity,volume,43,0.5
+E,G3,original_firstorder_Minimum,1GSF,minimum intensity,volume,-743,13
+E,G3,original_firstorder_10Percentile,QG58,10th intensity percentile,volume,-310,21
+E,G3,original_firstorder_90Percentile,8DWT,90th intensity percentile,volume,93,0.2
+E,G3,original_firstorder_Maximum,84IY,maximum intensity,volume,345,9
+E,G3,original_firstorder_InterquartileRange,SALO,intensity interquartile range,volume,62,3.5
+E,G3,original_firstorder_Range,2OJQ,intensity range,volume,1.09e3,30
+E,G3,original_firstorder_MeanAbsoluteDeviation,4FUA,mean absolute deviation,volume,125,6
+E,G3,original_firstorder_RobustMeanAbsoluteDeviation,1128,robust mean absolute deviation,volume,46.5,3.7
+E,G3,original_firstorder_Energy,N8CA,intensity-based energy,volume,1.58e9,1.4e8
+E,G3,original_firstorder_RootMeanSquared,5ZWQ,root mean square intensity,volume,189,7
+E,G3,original_firstorder_Entropy,TLU2,discretised intensity entropy,volume,3.22,0.02
+E,G3,original_firstorder_Uniformity,BJ5W,discretised intensity uniformity,volume,0.184,0.001
+E,G3,original_glcm_MaximumProbability,GYBY,joint maximum,"3D, averaged",0.153,0.003
+E,G3,original_glcm_JointAverage,60VM,joint average,"3D, averaged",22.1,0.3
+E,G3,original_glcm_SumSquares,UR99,joint variance,"3D, averaged",24.4,0.9
+E,G3,original_glcm_JointEntropy,TU9B,joint entropy,"3D, averaged",5.61,0.03
+E,G3,original_glcm_DifferenceAverage,TF7R,difference average,"3D, averaged",1.7,0.01
+E,G3,original_glcm_DifferenceVariance,D3YU,difference variance,"3D, averaged",8.23,0.06
+E,G3,original_glcm_DifferenceEntropy,NTRS,difference entropy,"3D, averaged",2.4,0.01
+E,G3,original_glcm_SumAverage,ZGXS,sum average,"3D, averaged",44.3,0.4
+E,G3,original_glcm_SumVariance,OEEB,sum variance,"3D, averaged",86.7,3.3
+E,G3,original_glcm_SumEntropy,P6QZ,sum entropy,"3D, averaged",3.97,0.02
+E,G3,original_glcm_JointEnergy,8ZQL,angular second moment,"3D, averaged",0.0635,0.0009
+E,G3,original_glcm_Contrast,ACUI,contrast,"3D, averaged",11.1,0.1
+E,G3,original_glcm_Dissimilarity,8S9J,dissimilarity,"3D, averaged",1.7,0.01
+E,G3,original_glcm_Id,IB1Z,inverse difference,"3D, averaged",0.608,0.001
+E,G3,original_glcm_Idn,NDRX,inverse difference normalised,"3D, averaged",0.955,0.001
+E,G3,original_glcm_Idm,WF0Z,inverse difference moment,"3D, averaged",0.577,0.001
+E,G3,original_glcm_Idmn,1QCO,inverse difference moment normalised,"3D, averaged",0.99,0.001
+E,G3,original_glcm_InverseVariance,E8JP,inverse variance,"3D, averaged",0.41,0.004
+E,G3,original_glcm_Autocorrelation,QWB0,autocorrelation,"3D, averaged",509,8
+E,G3,original_glcm_ClusterTendency,DG8W,cluster tendency,"3D, averaged",86.7,3.3
+E,G3,original_glcm_ClusterShade,7NFM,cluster shade,"3D, averaged",-2.08e3,70
+E,G3,original_glcm_ClusterProminence,AE86,cluster prominence,"3D, averaged",6.9e4,2.1e3
+E,G3,original_glcm_Imc2,JN9H,informational measure of correlation 2,"3D, averaged",0.813,0.004
+E,G3,original_glrlm_ShortRunEmphasis,22OV,short runs emphasis,"3D, averaged",0.777,0.001
+E,G3,original_glrlm_LongRunEmphasis,W4KF,long runs emphasis,"3D, averaged",3.52,0.07
+E,G3,original_glrlm_LowGrayLevelRunEmphasis,V3SW,low grey level run emphasis,"3D, averaged",0.0204,0.0008
+E,G3,original_glrlm_HighGrayLevelRunEmphasis,G3QZ,high grey level run emphasis,"3D, averaged",471,9
+E,G3,original_glrlm_ShortRunLowGrayLevelEmphasis,HTZT,short run low grey level emphasis,"3D, averaged",0.0186,0.0007
+E,G3,original_glrlm_ShortRunHighGrayLevelEmphasis,GD3A,short run high grey level emphasis,"3D, averaged",347,7
+E,G3,original_glrlm_LongRunLowGrayLevelEmphasis,IVPO,long run low grey level emphasis,"3D, averaged",0.0311,0.0016
+E,G3,original_glrlm_LongRunHighGrayLevelEmphasis,3KUM,long run high grey level emphasis,"3D, averaged",1.89e3,20
+E,G3,original_glrlm_GrayLevelNonUniformityNormalized,OVBL,grey level non-uniformity normalised,"3D, averaged",0.135,0.003
+E,G3,original_glrlm_RunLengthNonUniformityNormalized,IC23,run length non-uniformity normalised,"3D, averaged",0.56,0.001
+E,G3,original_glrlm_RunPercentage,9ZK5,run percentage,"3D, averaged",0.664,0.003
+E,G3,original_glrlm_GrayLevelVariance,8CE5,grey level variance,"3D, averaged",39.7,0.9
+E,G3,original_glrlm_RunVariance,SXLW,run length variance,"3D, averaged",1.25,0.05
+E,G3,original_glrlm_RunEntropy,HJ9O,run entropy,"3D, averaged",4.87,0.03
+E,G3,original_glszm_SmallAreaEmphasis,P001,small zone emphasis,3D,0.676,0.003
+E,G3,original_glszm_LargeAreaEmphasis,48P8,large zone emphasis,3D,5.86e4,800
+E,G3,original_glszm_LowGrayLevelZoneEmphasis,XMSY,low grey level zone emphasis,3D,0.034,0.0004
+E,G3,original_glszm_HighGrayLevelZoneEmphasis,5GN9,high grey level zone emphasis,3D,286,6
+E,G3,original_glszm_SmallAreaLowGrayLevelEmphasis,5RAI,small zone low grey level emphasis,3D,0.0224,0.0004
+E,G3,original_glszm_SmallAreaHighGrayLevelEmphasis,HW1V,small zone high grey level emphasis,3D,186,4
+E,G3,original_glszm_LargeAreaLowGrayLevelEmphasis,YH51,large zone low grey level emphasis,3D,105,4
+E,G3,original_glszm_LargeAreaHighGrayLevelEmphasis,J17V,large zone high grey level emphasis,3D,3.36e7,3e5
+E,G3,original_glszm_GrayLevelNonUniformity,JNSA,grey level non-uniformity,3D,231,6
+E,G3,original_glszm_GrayLevelNonUniformityNormalized,Y1RO,grey level non-uniformity normalised,3D,0.0414,0.0003
+E,G3,original_glszm_SizeZoneNonUniformity,4JP3,zone size non-uniformity,3D,2.37e3,40
+E,G3,original_glszm_SizeZoneNonUniformityNormalized,VB3A,zone size non-uniformity normalised,3D,0.424,0.004
+E,G3,original_glszm_ZonePercentage,P30P,zone percentage,3D,0.126,0.001
+E,G3,original_glszm_GrayLevelVariance,BYLV,grey level variance,3D,50.8,0.9
+E,G3,original_glszm_ZoneVariance,3NSA,zone size variance,3D,5.85e4,800
+E,G3,original_glszm_ZoneEntropy,GU8N,zone size entropy,3D,6.57,0.01
+E,G3,original_ngtdm_Coarseness,QCDE,coarseness,3D,0.000188,4e-6
+E,G3,original_ngtdm_Contrast,65HE,contrast,3D,0.0752,0.0019
+E,G3,original_ngtdm_Busyness,NQ30,busyness,3D,4.65,0.1
+E,G3,original_ngtdm_Complexity,HDEZ,complexity,3D,574,1
+E,G3,original_ngtdm_Strength,1X9X,strength,3D,0.167,0.006
+E,G3,original_gldm_SmallDependenceEmphasis,SODN,low dependence emphasis,3D,0.118,0.001
+E,G3,original_gldm_LargeDependenceEmphasis,IMOQ,high dependence emphasis,3D,134,3
+E,G3,original_gldm_LowGrayLevelEmphasis,TL9H,low grey level count emphasis,3D,0.0154,0.0007
+E,G3,original_gldm_HighGrayLevelEmphasis,OAE7,high grey level count emphasis,3D,502,8
+E,G3,original_gldm_SmallDependenceLowGrayLevelEmphasis,EQ3F,low dependence low grey level emphasis,3D,0.00388,4e-5
+E,G3,original_gldm_SmallDependenceHighGrayLevelEmphasis,JA6D,low dependence high grey level emphasis,3D,36.7,0.5
+E,G3,original_gldm_LargeDependenceLowGrayLevelEmphasis,NBZI,high dependence low grey level emphasis,3D,0.457,0.031
+E,G3,original_gldm_LargeDependenceHighGrayLevelEmphasis,9QMG,high dependence high grey level emphasis,3D,7.6e4,600
+E,G3,original_gldm_GrayLevelNonUniformity,FP8K,grey level non-uniformity,3D,8.17e3,130
+E,G3,original_gldm_GrayLevelNonUniformityNormalized,5SPA,grey level non-uniformity normalised,3D,0.184,0.001
+E,G3,original_gldm_DependenceNonUniformity,Z87G,dependence count non-uniformity,3D,2.25e3,30
+E,G3,original_gldm_DependenceNonUniformityNormalized,OKJI,dependence count non-uniformity normalised,3D,0.0505,0.0003
+E,G3,original_gldm_DependencePercentage,6XV8,dependence count percentage,3D,1,
+E,G3,original_gldm_GrayLevelVariance,1PFV,grey level variance,3D,30.4,0.8
+E,G3,original_gldm_DependenceVariance,DNX2,dependence count variance,3D,39.4,1
+E,G3,original_gldm_DependenceEntropy,FCBV,dependence count entropy,3D,7.06,0.02

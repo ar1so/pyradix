@@ -1,0 +1,25 @@
+{
+  "cpu_model": "Intel(R) Xeon(R) Processor",
+  "git_head": "810721b4fee895fa020bafb90e984da50b8900a1",
+  "logical_cpus": 4,
+  "machine": "x86_64",
+  "mem_total_bytes": 16780623872,
+  "openblas": "0.3.26",
+  "os": "Linux-6.12.113+-x86_64-with-glibc2.39",
+  "pyradiomics": {
+    "numpy": "1.26.4",
+    "python": "3.9.25",
+    "simpleitk": "SimpleITK Version: 2.3.1 (ITK 5.3)",
+    "version": "v3.1.0"
+  },
+  "pyradix": {
+    "engine_info": "radix-core 0.1.0",
+    "numpy": "2.5.4",
+    "python": "3.12.3",
+    "version": "0.1.0"
+  },
+  "random_seed": null,
+  "randomness": "No random generator is used. Feature extraction is deterministic. Scaling masks keep the voxels nearest the centroid.",
+  "recorded_utc": "2026-11-13T15:31:23Z",
+  "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)"
+}

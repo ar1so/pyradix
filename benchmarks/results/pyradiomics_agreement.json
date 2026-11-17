@@ -1,0 +1,379 @@
+{
+  "jobs": [
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_glcm_Correlation",
+        "worst_rel_err": 6.908765094787738e-15
+      },
+      "bin_width": 5.0,
+      "config": "bw5",
+      "dataset": "d1_digital_phantom",
+      "licence": "CC BY 4.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 152020,
+      "pyradiomics_median_s": 0.007668886999908864,
+      "pyradiomics_roi_voxels": 74,
+      "pyradiomics_seconds": [
+        0.007668886999908864,
+        0.007588017999978547,
+        0.007786524000039208
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 46312,
+      "radix_median_s": 0.000465767999912714,
+      "radix_roi_voxels": 74,
+      "radix_seconds": [
+        0.0006179599999995844,
+        0.000465767999912714,
+        0.00043962100016869954
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 16.46503624410872,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_firstorder_Kurtosis",
+        "worst_rel_err": 2.350229482202026e-15
+      },
+      "bin_width": 25.0,
+      "config": "bw25",
+      "dataset": "d1_digital_phantom",
+      "licence": "CC BY 4.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 152016,
+      "pyradiomics_median_s": 0.008010839000007763,
+      "pyradiomics_roi_voxels": 74,
+      "pyradiomics_seconds": [
+        0.008084474000042974,
+        0.008010839000007763,
+        0.007486222999887104
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 45704,
+      "radix_median_s": 0.0004961790000379551,
+      "radix_roi_voxels": 74,
+      "radix_seconds": [
+        0.0005959969998912129,
+        0.0004693129999395751,
+        0.0004961790000379551
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 16.145058536123003,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_firstorder_Kurtosis",
+        "worst_rel_err": 2.350229482202026e-15
+      },
+      "bin_width": 50.0,
+      "config": "bw50",
+      "dataset": "d1_digital_phantom",
+      "licence": "CC BY 4.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 152116,
+      "pyradiomics_median_s": 0.007478485999854456,
+      "pyradiomics_roi_voxels": 74,
+      "pyradiomics_seconds": [
+        0.007478485999854456,
+        0.007441143999812994,
+        0.007681038000100671
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 45760,
+      "radix_median_s": 0.0004240139999183157,
+      "radix_roi_voxels": 74,
+      "radix_seconds": [
+        0.0006439280000449799,
+        0.00041612199993323884,
+        0.0004240139999183157
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 17.637356316761124,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_glcm_ClusterShade",
+        "worst_rel_err": 2.582700675404113e-13
+      },
+      "bin_width": 5.0,
+      "config": "bw5",
+      "dataset": "d4_brain1",
+      "licence": "BSD-3-Clause package data",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 185388,
+      "pyradiomics_median_s": 0.4350966760000574,
+      "pyradiomics_roi_voxels": 4137,
+      "pyradiomics_seconds": [
+        0.4350966760000574,
+        0.4303038150001157,
+        0.4453534669999044
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 121724,
+      "radix_median_s": 0.2080019549998724,
+      "radix_roi_voxels": 4137,
+      "radix_seconds": [
+        0.21180993399980252,
+        0.2080019549998724,
+        0.20707906400002685
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 2.0917912814825432,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_shape_LeastAxisLength",
+        "worst_rel_err": 4.2009496418626235e-14
+      },
+      "bin_width": 25.0,
+      "config": "bw25",
+      "dataset": "d4_brain1",
+      "licence": "BSD-3-Clause package data",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 184764,
+      "pyradiomics_median_s": 0.15924667099989165,
+      "pyradiomics_roi_voxels": 4137,
+      "pyradiomics_seconds": [
+        0.15924667099989165,
+        0.16264234400000532,
+        0.15674571199997445
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 120188,
+      "radix_median_s": 0.08011488099987218,
+      "radix_roi_voxels": 4137,
+      "radix_seconds": [
+        0.08111419000010756,
+        0.0798397810001461,
+        0.08011488099987218
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 1.9877289838344228,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_glcm_ClusterShade",
+        "worst_rel_err": 1.5023538704053958e-13
+      },
+      "bin_width": 50.0,
+      "config": "bw50",
+      "dataset": "d4_brain1",
+      "licence": "BSD-3-Clause package data",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 184876,
+      "pyradiomics_median_s": 0.1554521329999261,
+      "pyradiomics_roi_voxels": 4137,
+      "pyradiomics_seconds": [
+        0.1554521329999261,
+        0.15708690200017372,
+        0.15249659100004465
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 120396,
+      "radix_median_s": 0.08764390900000762,
+      "radix_roi_voxels": 4137,
+      "radix_seconds": [
+        0.08845614999995632,
+        0.08764390900000762,
+        0.08689268600005562
+      ],
+      "repeats": 3,
+      "resample_mm": null,
+      "speedup": 1.7736786819938917,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_shape_LeastAxisLength",
+        "worst_rel_err": 1.3330128779736063e-14
+      },
+      "bin_width": 25.0,
+      "config": "resample_2mm",
+      "dataset": "d4_brain1",
+      "licence": "BSD-3-Clause package data",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 188384,
+      "pyradiomics_median_s": 0.17922695199990812,
+      "pyradiomics_roi_voxels": 4137,
+      "pyradiomics_seconds": [
+        0.17961142799981644,
+        0.1788424759999998
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 137244,
+      "radix_median_s": 0.12491364949994477,
+      "radix_roi_voxels": 4137,
+      "radix_seconds": [
+        0.1254175369999757,
+        0.12440976199991383
+      ],
+      "repeats": 2,
+      "resample_mm": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "speedup": 1.4348067862670795,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_glszm_ZoneVariance",
+        "worst_rel_err": 8.693470136751608e-13
+      },
+      "bin_width": 25.0,
+      "config": "bw25",
+      "dataset": "d2_pat1",
+      "licence": "CC BY-NC 3.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 214352,
+      "pyradiomics_median_s": 1.1036179499999434,
+      "pyradiomics_roi_voxels": 125256,
+      "pyradiomics_seconds": [
+        1.1020442110000204,
+        1.1051916889998665
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 162672,
+      "radix_median_s": 2.137125056000059,
+      "radix_roi_voxels": 125256,
+      "radix_seconds": [
+        2.135604540000031,
+        2.1386455720000868
+      ],
+      "repeats": 2,
+      "resample_mm": null,
+      "speedup": 0.5164030747295272,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_firstorder_RobustMeanAbsoluteDeviation",
+        "worst_rel_err": 8.452915522485286e-13
+      },
+      "bin_width": 50.0,
+      "config": "bw50",
+      "dataset": "d2_pat1",
+      "licence": "CC BY-NC 3.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 207084,
+      "pyradiomics_median_s": 1.0885928970000123,
+      "pyradiomics_roi_voxels": 125256,
+      "pyradiomics_seconds": [
+        1.0861618550000003,
+        1.0910239390000243
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 163076,
+      "radix_median_s": 2.0959995055000036,
+      "radix_roi_voxels": 125256,
+      "radix_seconds": [
+        2.0941332200000033,
+        2.097865791000004
+      ],
+      "repeats": 2,
+      "resample_mm": null,
+      "speedup": 0.5193669627037087,
+      "threads": 4
+    },
+    {
+      "agreement": {
+        "n_fail": 0,
+        "n_pass": 107,
+        "n_radix_only": 1,
+        "n_reference_only": 0,
+        "n_shared": 107,
+        "worst_feature": "original_glszm_ZoneVariance",
+        "worst_rel_err": 2.01733952665024e-12
+      },
+      "bin_width": 5.0,
+      "config": "bw5",
+      "dataset": "d2_pat1",
+      "licence": "CC BY-NC 3.0",
+      "pyradiomics_error": null,
+      "pyradiomics_max_rss_kb": 217996,
+      "pyradiomics_median_s": 2.452283479000016,
+      "pyradiomics_roi_voxels": 125256,
+      "pyradiomics_seconds": [
+        2.452283479000016
+      ],
+      "radix_error": null,
+      "radix_max_rss_kb": 164704,
+      "radix_median_s": 2.8688011799999913,
+      "radix_roi_voxels": 125256,
+      "radix_seconds": [
+        2.8688011799999913
+      ],
+      "repeats": 1,
+      "resample_mm": null,
+      "speedup": 0.8548112347750859,
+      "threads": 4
+    }
+  ],
+  "protocol": {
+    "image_type": "Original",
+    "interpolator": "sitkBSpline",
+    "label": 1,
+    "mode": "pyradiomics",
+    "readers": "each engine reads the public file with its own loader",
+    "threads": "taskset to 4 CPUs; OPENBLAS_NUM_THREADS=OMP_NUM_THREADS=ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=4",
+    "timing": "one untimed warmup after load, then perf_counter around extract/execute only",
+    "tolerance": "abs(a-b) <= max(1e-4, 1e-4*|b|)",
+    "voxelArrayShift": 0
+  }
+}

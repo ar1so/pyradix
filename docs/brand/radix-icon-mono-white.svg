@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 48 184 184" width="552" height="552" role="img">
+<title>Radix icon, one-color white</title>
+<g id="radix-icon">
+  <circle id="slice" cx="140" cy="140" r="84" fill="none" stroke="#FFFFFF" stroke-width="7"/>
+  <g id="region" fill="#FFFFFF">
+    <rect x="123" y="74" width="16" height="16" rx="3" opacity="0.75"/>
+    <rect x="142" y="74" width="16" height="16" rx="3" opacity="1"/>
+    <rect x="104" y="93" width="16" height="16" rx="3" opacity="0.55"/>
+    <rect x="123" y="93" width="16" height="16" rx="3" opacity="1"/>
+    <rect x="142" y="93" width="16" height="16" rx="3" opacity="0.85"/>
+    <rect x="161" y="93" width="16" height="16" rx="3" opacity="0.5"/>
+    <rect x="123" y="112" width="16" height="16" rx="3" opacity="0.9"/>
+    <rect x="142" y="112" width="16" height="16" rx="3" opacity="0.65"/>
+  </g>
+  <g id="roots" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round">
+    <path d="M140 132 L140 156"/>
+    <path d="M140 156 C140 176 110 172 106 194"/>
+    <path d="M140 156 L140 198"/>
+    <path d="M140 156 C140 176 170 172 174 194"/>
+  </g>
+  <g id="features" fill="#FFFFFF">
+    <circle cx="106" cy="200" r="7"/>
+    <circle cx="140" cy="204" r="7"/>
+    <circle cx="174" cy="200" r="7"/>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,70 @@
+name: New mode proposal
+description: Propose a named, validated way to extract features (see CONTRIBUTING.md, "Contributing a mode").
+title: "Mode proposal: <name>"
+labels: ["mode-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A mode is one standard (IBSI or PyRadiomics 3.1.0) plus fixed settings, a feature set, an input contract and its own validation.
+        Please read **Contributing a mode** and **Validation rules** in CONTRIBUTING.md first.
+  - type: input
+    id: name
+    attributes:
+      label: Proposed name
+      description: Lowercase with hyphens, modality first when there is one.
+      placeholder: us-2d
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: Who uses this mode, for what, and why the existing modes are not enough.
+    validations:
+      required: true
+  - type: dropdown
+    id: base
+    attributes:
+      label: Base standard
+      options:
+        - ibsi
+        - pyradiomics
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Input contract
+      description: Modality, 2D or 3D, intensity units, allowed spacing. Inputs outside it will be refused.
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings and features
+      description: What the mode fixes (discretization, resampling, filters) and which features it computes, with reasons.
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference source for expected values
+      description: Published values, an independent pinned implementation (name and exact version), or hand calculation on a phantom. Never pyradix itself.
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Validation data
+      description: Public cases you will use, where to download them, and their license. No patient-identifiable data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: Checks
+      options:
+        - label: I have read the validation rules in CONTRIBUTING.md.
+          required: true
+        - label: I can write the validation pack and test described there.

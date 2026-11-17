@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: pyradix
+message: If you use this software, please cite it.
+type: software
+authors:
+  - given-names: Ahmadreza
+    family-names: Sohrabi-Ashlaghi
+repository-code: https://github.com/ar1so/pyradix
+url: https://github.com/ar1so/pyradix
+license: BSD-3-Clause
+version: 0.1.0
+date-released: 2026-11-18
+keywords:
+  - radiomics
+  - ibsi
+  - medical imaging

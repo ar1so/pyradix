@@ -1,0 +1,10 @@
+# IBSI-1 PAT1 configuration C (3D, 2 mm, trilinear, FBS 25 HU).
+# https://ibsi.readthedocs.io/en/latest/05_Reference_data_sets.html
+mode: ibsi
+bin_width: 25.0
+resampled_pixel_spacing: [2.0, 2.0, 2.0]
+interpolator: linear
+resegment_range: [-1000, 400]
+image_types:
+  - Original
+label: 1

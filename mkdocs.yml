@@ -1,0 +1,40 @@
+site_name: pyradix
+site_description: Radiomics feature extraction for Python (IBSI and PyRadiomics 3.1.0)
+repo_url: https://github.com/ar1so/pyradix
+repo_name: ar1so/pyradix
+docs_dir: docsite
+site_dir: site-build
+
+theme:
+  name: material
+  logo: brand/radix-icon-reversed.svg
+  favicon: brand/radix-icon.svg
+  palette:
+    primary: custom
+
+extra_css:
+  - brand/radix-theme.css
+
+markdown_extensions:
+  - admonition
+  - tables
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [python]
+          options:
+            show_if_no_docstring: true
+            docstring_style: google
+            merge_init_into_class: true
+            members_order: source
+
+nav:
+  - Home: index.md
+  - Install: install.md
+  - Usage: usage.md
+  - IBSI or PyRadiomics?: modes.md
+  - Validation: validation.md
+  - API reference: api.md

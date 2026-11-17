@@ -1,0 +1,155 @@
+# Build wheels and an sdist. Publish on a v* tag via PyPI Trusted Publishing.
+# A manual run can publish to TestPyPI or PyPI; the default publishes nothing.
+#
+# PyPI project: pyradix-radiomics (the import name stays pyradix). PyPI rejects
+# "pyradix" because it normalizes to the existing "py-radix".
+# PyPI environment: pypi
+#   owner ar1so, repository pyradix, workflow release.yml
+# TestPyPI environment: testpypi, same workflow and repository.
+
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      publish_to:
+        description: Index to publish to
+        type: choice
+        default: none
+        options:
+          - none
+          - testpypi
+          - pypi
+
+permissions:
+  contents: read
+
+jobs:
+  manylinux:
+    name: manylinux ${{ matrix.arch }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x86_64
+            target: x86_64-unknown-linux-gnu
+            runner: ubuntu-latest
+            sdist: --sdist
+          - arch: aarch64
+            target: aarch64-unknown-linux-gnu
+            runner: ubuntu-24.04-arm
+            sdist: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: PyO3/maturin-action@v1
+        with:
+          target: ${{ matrix.target }}
+          manylinux: "2_28"
+          args: --release --out dist ${{ matrix.sdist }} -i python3.10 -i python3.11 -i python3.12 -i python3.13
+          sccache: true
+          before-script-linux: |
+            if command -v yum >/dev/null 2>&1; then
+              yum install -y openblas-devel openblas-static gcc-gfortran pkgconfig
+            elif command -v dnf >/dev/null 2>&1; then
+              dnf install -y openblas-devel openblas-static gcc-gfortran pkgconfig
+            elif command -v apt-get >/dev/null 2>&1; then
+              apt-get update
+              DEBIAN_FRONTEND=noninteractive apt-get install -y libopenblas-dev gfortran pkg-config
+            else
+              echo "no package manager found for OpenBLAS" >&2
+              exit 1
+            fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Smoke-test manylinux wheel on host
+        run: |
+          python -m pip install -U pip
+          python -m pip install --force-reinstall dist/pyradix_radiomics-*-cp312-*.whl
+          python scripts/wheel_smoke.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.arch }}
+          path: dist/*
+
+  macos:
+    name: macos universal2 py${{ matrix.python }}
+    runs-on: macos-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+      - uses: Swatinem/rust-cache@v2
+      - name: Build and test
+        run: |
+          python -m pip install -U pip "maturin>=1.14,<1.16"
+          python -m maturin build --release --target universal2-apple-darwin -o dist
+          python scripts/ci_install_test.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-macos-${{ matrix.python }}
+          path: dist/*.whl
+
+  windows:
+    name: windows py${{ matrix.python }}
+    runs-on: windows-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Build and test
+        shell: pwsh
+        run: |
+          python -m pip install -U pip "maturin>=1.14,<1.16"
+          python -m maturin build --release -o dist
+          python scripts/ci_install_test.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-windows-${{ matrix.python }}
+          path: dist/*.whl
+
+  publish:
+    name: publish
+    needs: [manylinux, macos, windows]
+    if: >-
+      (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.publish_to != 'none')
+    runs-on: ubuntu-latest
+    environment: >-
+      ${{ (github.event_name == 'workflow_dispatch' && inputs.publish_to == 'testpypi') && 'testpypi' || 'pypi' }}
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: release-*
+          merge-multiple: true
+          path: dist
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist
+          repository-url: ${{ (github.event_name == 'workflow_dispatch' && inputs.publish_to == 'testpypi') && 'https://test.pypi.org/legacy/' || 'https://upload.pypi.org/legacy/' }}
+          attestations: false

@@ -1,0 +1,8 @@
+{
+  "returncodes": {
+    "ibsi_agreement.py": 0,
+    "make_figures.py": 0,
+    "pyradiomics_agreement.py": 0,
+    "runtime_scaling.py": 0
+  }
+}

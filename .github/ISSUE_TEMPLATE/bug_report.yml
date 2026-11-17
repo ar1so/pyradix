@@ -1,0 +1,29 @@
+name: Bug report
+description: A wrong value, a crash or an install problem.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: The command or code, the settings or parameter file, and the image/mask (or a public case, or how to make a synthetic one).
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: pyradix version
+      description: Output of `pyradix --version`.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and Python version
+      placeholder: Windows 11, Python 3.12

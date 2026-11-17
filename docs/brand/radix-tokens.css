@@ -1,0 +1,11 @@
+:root {
+  --radix-blue: #3C8DCC;
+  --radix-deep: #1E3550;
+  --radix-sky: #75B9F8;
+  --radix-mist: #EAF3FC;
+  --radix-ink: #151D27;
+  --radix-slate: #5F6873;
+  --radix-amber: #F2B84B;
+  --radix-font: "Poppins", system-ui, sans-serif;
+  --radix-mono: ui-monospace, "DejaVu Sans Mono", monospace;
+}

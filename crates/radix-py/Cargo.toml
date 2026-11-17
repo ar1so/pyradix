@@ -1,0 +1,17 @@
+[package]
+name = "radix-py"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "PyO3 bindings for radix-core"
+
+[lib]
+name = "_radix"
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+pyo3 = { version = "0.30.1", features = ["extension-module"] }
+numpy = "0.30"
+radix-core = { path = "../radix-core" }

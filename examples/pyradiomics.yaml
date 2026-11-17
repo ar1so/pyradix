@@ -1,0 +1,6 @@
+setting:
+  binWidth: 25
+  interpolator: sitkBSpline
+  label: 1
+imageType:
+  Original: {}
