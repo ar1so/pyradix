@@ -859,7 +859,7 @@ dependencies = [
 
 [[package]]
 name = "radix-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "faer",
  "lapack",
@@ -869,7 +869,7 @@ dependencies = [
 
 [[package]]
 name = "radix-py"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "numpy",
  "pyo3",

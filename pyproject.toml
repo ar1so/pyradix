@@ -4,8 +4,8 @@ build-backend = "maturin"
 
 [project]
 name = "pyradix-radiomics"
-version = "0.1.0"
-description = "Dual-standard radiomics extractor (IBSI + PyRadiomics compat)"
+version = "0.1.1"
+description = "Radiomics feature extraction for Python: IBSI and PyRadiomics 3.1.0 modes, Rust engine"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "BSD-3-Clause"
