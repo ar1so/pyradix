@@ -41,3 +41,4 @@ All of these are in `docs/brand/`.
 | `radix-wordmark.svg` | Name only |
 | `radix-readme-header.svg` | README header source, on deep blue |
 | `radix-cover.png` | README header, rendered from `radix-readme-header.svg` at 2x |
+| `radix-social-preview.png` | GitHub social preview, 1280×640 (Settings → Social preview) |

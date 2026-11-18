@@ -1,15 +1,16 @@
-![Radix](docs/brand/radix-cover.png)
+<p align="center"><img src="docs/brand/radix-icon.svg" width="96" alt="pyradix logo"></p>
+<h1 align="center">pyradix</h1>
+<p align="center"><b>Radiomics feature extraction for Python: standardised, reproducible and fast.</b></p>
+<p align="center">
+  <a href="https://pypi.org/project/pyradix-radiomics/"><img src="https://img.shields.io/pypi/v/pyradix-radiomics?color=3C8DCC" alt="PyPI"></a>
+  <a href="https://github.com/ar1so/pyradix/actions/workflows/ci.yml"><img src="https://github.com/ar1so/pyradix/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/python-3.10%E2%80%933.13-3C8DCC" alt="Python 3.10–3.13">
+  <img src="https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-3C8DCC" alt="Linux, macOS, Windows">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-1E3550" alt="BSD-3-Clause licence"></a>
+  <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/built%20with-Rust%20%F0%9F%A6%80-DEA584" alt="Built with Rust"></a>
+</p>
 
-# pyradix
-
-[![PyPI](https://img.shields.io/pypi/v/pyradix-radiomics?color=3C8DCC)](https://pypi.org/project/pyradix-radiomics/)
-[![CI](https://github.com/ar1so/pyradix/actions/workflows/ci.yml/badge.svg)](https://github.com/ar1so/pyradix/actions/workflows/ci.yml)
-![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-3C8DCC)
-![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-3C8DCC)
-[![License: BSD-3-Clause](https://img.shields.io/badge/license-BSD--3--Clause-1E3550)](LICENSE)
-[![Built with Rust](https://img.shields.io/badge/built%20with-Rust%20%F0%9F%A6%80-DEA584)](https://www.rust-lang.org)
-
-**Radiomics feature extraction for Python: standardised, reproducible and fast.**
+![pyradix: radiomics feature extraction for Python](docs/brand/radix-cover.png)
 
 ## What does pyradix do?
 
@@ -34,7 +35,7 @@ What makes pyradix different:
 
 ---
 
-**Contents:** [Install](#install) · [Your input files](#before-you-start-your-input-files) · [Quick start](#quick-start) · [Many patients](#many-patients--one-table) · [Which mode?](#which-mode-ibsi-or-pyradiomics) · [More usage](#more-usage) · [What the features mean](#what-the-features-mean) · [Common errors](#common-errors) · [How we know it is right](#how-we-know-it-is-right) · [Speed](#speed) · [Limitations](#known-limitations) · [Help](#getting-help) · [Citing](#citing)
+**Contents:** [Install](#install) · [Your input files](#before-you-start-your-input-files) · [Quick start](#quick-start) · [Many patients](#many-patients--one-table) · [Which mode?](#which-mode-ibsi-or-pyradiomics) · [More usage](#more-usage) · [What the features mean](#what-the-features-mean) · [Common errors](#common-errors) · [How we know it is right](#how-we-know-it-is-right) · [Speed](#speed) · [Limitations](#known-limitations) · [Help](#getting-help) · [Citing](#citing) · [About us](#about-us)
 
 ## Install
 
@@ -275,6 +276,16 @@ Contributions are welcome, including new **modes**: named, validated ways to ext
 ## Citing
 
 If you use pyradix in a publication, please cite it. The **Cite this repository** button on GitHub (from [CITATION.cff](CITATION.cff)) gives BibTeX and APA. If you used `mode="pyradiomics"`, also cite PyRadiomics (van Griethuysen et al., *Cancer Research* 2017); for `mode="ibsi"`, the IBSI reference manual (Zwanenburg et al., *Radiology* 2020).
+
+## About us
+
+<table>
+<tr>
+<td align="center" valign="top" width="33%"><img src="docs/team/ahmadreza-sohrabi.jpg" width="120" alt="Ahmadreza Sohrabi"><br><b>Ahmadreza Sohrabi</b><br><sub>MD · <a href="https://github.com/ar1so">@ar1so</a></sub><br><br><div align="left"><sub>Ahmadreza discovered in medical school how much technology could change healthcare, and he has been building that change ever since. He’s Tech Lead at Zeenome and an AI Research Fellow at ADIR, developing deep learning for medical imaging. He also contributes to open-source medical AI and mentors young developer-researchers, guided by a belief in thoughtful, ethical AI.</sub></div><br><a href="https://www.linkedin.com/in/arsohrabi/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/ar1so"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=fLVfLUQAAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+<td align="center" valign="top" width="33%"><img src="docs/team/seyed-amir-asef-agah.jpg" width="120" alt="Amir Asef Agah"><br><b>Amir Asef Agah</b><br><sub>MD · <a href="https://github.com/AmirAsefAgah">@AmirAsefAgah</a></sub><br><br><div align="left"><sub>Amir is a physician on the path to neurosurgery, driven by one question: how can imaging help surgeons make better decisions? As a Postdoctoral Research Fellow at ADIR, Tehran University of Medical Sciences, he works on MRI radiomics, cerebrovascular imaging, and automated segmentation. He also reviews for World Neurosurgery and JIIM.</sub></div><br><a href="https://www.linkedin.com/in/seyed-amir-asef-agah-552264180/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/AmirAsefAgah"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=Y0ZYG38AAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+<td align="center" valign="top" width="33%"><img src="docs/team/mostafa-neshat-ghalibaf.jpg" width="120" alt="Mostafa Neshat"><br><b>Mostafa Neshat</b><br><sub>MD · <a href="https://github.com/mostafansh">@mostafansh</a></sub><br><br><div align="left"><sub>Mostafa sees a brain scan as both a patient’s story and data waiting to be understood. A physician at ADIR, he turns clinical neuroimaging into data AI models can learn from, and in 2025 he began an MSc in computer science. He’s on his way to radiology, hoping to make it more computational and quantitative.</sub></div><br><a href="https://www.linkedin.com/in/mostafansh/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/mostafansh"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?hl=en&amp;user=xIceI6AAAAAJ"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+</tr>
+</table>
 
 ## License
 

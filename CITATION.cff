@@ -5,6 +5,13 @@ type: software
 authors:
   - given-names: Ahmadreza
     family-names: Sohrabi-Ashlaghi
+    affiliation: ADIR, Tehran University of Medical Sciences
+  - given-names: Seyed Amir Asef
+    family-names: Agah
+    affiliation: ADIR, Tehran University of Medical Sciences
+  - given-names: Mostafa
+    family-names: Neshat Ghalibaf
+    affiliation: ADIR, Tehran University of Medical Sciences
 repository-code: https://github.com/ar1so/pyradix
 url: https://github.com/ar1so/pyradix
 license: BSD-3-Clause
