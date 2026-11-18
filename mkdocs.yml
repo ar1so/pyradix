@@ -1,23 +1,50 @@
 site_name: pyradix
-site_description: Radiomics feature extraction for Python (IBSI and PyRadiomics 3.1.0)
+site_description: Radiomics feature extraction for Python, IBSI and PyRadiomics 3.1.0 modes, Rust engine
+site_url: https://pyradix.readthedocs.io/
 repo_url: https://github.com/ar1so/pyradix
 repo_name: ar1so/pyradix
+edit_uri: edit/main/docsite/
 docs_dir: docsite
 site_dir: site-build
+copyright: BSD 3-Clause licence · Ahmadreza Sohrabi-Ashlaghi, Seyed Amir Asef Agah, Mostafa Neshat Ghalibaf
 
 theme:
   name: material
   logo: brand/radix-icon-reversed.svg
   favicon: brand/radix-icon.svg
   palette:
-    primary: custom
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      toggle: {icon: material/weather-night, name: Dark mode}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      toggle: {icon: material/weather-sunny, name: Light mode}
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
 
 extra_css:
   - brand/radix-theme.css
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
 markdown_extensions:
   - admonition
   - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
 
 plugins:
   - search
@@ -33,8 +60,28 @@ plugins:
 
 nav:
   - Home: index.md
-  - Install: install.md
-  - Usage: usage.md
-  - IBSI or PyRadiomics?: modes.md
+  - Getting started:
+      - Install: install.md
+      - Usage: usage.md
+  - User guide:
+      - Parameters: parameters.md
+      - Image filters: filters.md
+      - IBSI or PyRadiomics?: modes.md
+      - Mode differences: deviations.md
+  - Feature reference:
+      - Overview: features/index.md
+      - First order: features/firstorder.md
+      - Shape (3D): features/shape.md
+      - Shape (2D): features/shape2d.md
+      - GLCM: features/glcm.md
+      - GLRLM: features/glrlm.md
+      - GLSZM: features/glszm.md
+      - GLDM: features/gldm.md
+      - NGTDM: features/ngtdm.md
   - Validation: validation.md
+  - FAQ: faq.md
   - API reference: api.md
+  - About:
+      - Citing: citing.md
+      - Changelog: changelog.md
+      - Contributing: contributing.md

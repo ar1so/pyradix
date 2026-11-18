@@ -54,7 +54,7 @@ pyradix = "pyradix.cli:main"
 [project.urls]
 Homepage = "https://github.com/ar1so/pyradix"
 Repository = "https://github.com/ar1so/pyradix"
-Documentation = "https://github.com/ar1so/pyradix/blob/main/docsite/index.md"
+Documentation = "https://pyradix.readthedocs.io"
 Changelog = "https://github.com/ar1so/pyradix/blob/main/CHANGELOG.md"
 Issues = "https://github.com/ar1so/pyradix/issues"
 

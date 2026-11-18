@@ -3,6 +3,7 @@
 <p align="center"><b>Radiomics feature extraction for Python: standardised, reproducible and fast.</b></p>
 <p align="center">
   <a href="https://pypi.org/project/pyradix-radiomics/"><img src="https://img.shields.io/pypi/v/pyradix-radiomics?color=3C8DCC" alt="PyPI"></a>
+  <a href="https://pyradix.readthedocs.io"><img src="https://readthedocs.org/projects/pyradix/badge/?version=latest" alt="Documentation"></a>
   <a href="https://github.com/ar1so/pyradix/actions/workflows/ci.yml"><img src="https://github.com/ar1so/pyradix/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/python-3.10%E2%80%933.13-3C8DCC" alt="Python 3.10–3.13">
   <img src="https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-3C8DCC" alt="Linux, macOS, Windows">
@@ -263,7 +264,7 @@ Time to extract one case, after loading, with the same settings in both tools, o
 | [docs/DEVIATIONS.md](docs/DEVIATIONS.md) | Where IBSI and PyRadiomics differ, and what each mode does |
 | [docs/PREPROCESS.md](docs/PREPROCESS.md) | Resampling, re-segmentation and intensity binning |
 | [docs/VALIDATION.md](docs/VALIDATION.md) | Test data, checks and tolerances |
-| [docsite/](docsite/index.md) | The documentation site, with an API reference (`mkdocs serve`) |
+| [pyradix.readthedocs.io](https://pyradix.readthedocs.io) | Full documentation: parameters, filters, every feature with its formula, FAQ, API reference |
 
 ## Getting help
 

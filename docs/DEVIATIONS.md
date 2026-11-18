@@ -1,6 +1,6 @@
-# Dual-mode deviations (quoted)
+# Mode differences
 
-One engine, five policies. Feature names stay PyRadiomics (`docs/FEATURES.md`).
+Everything that `ibsi` and `pyradiomics` mode do differently, with the source of each rule. Feature names are the same in both modes.
 
 | Policy | `ibsi` (default) | `pyradiomics` | Source |
 |---|---|---|---|
@@ -9,6 +9,7 @@ One engine, five policies. Feature names stay PyRadiomics (`docs/FEATURES.md`).
 | Mask resample | Same interpolator (or `mask_interpolator`), then partial volume \(\ge 0.5\) | Always nearest neighbour | IBSI morphological mask note; PyRadiomics FAQ. |
 | Resegmentation | Dual masks: morph unchanged; intensity = range \(\cap\) \(k\sigma\) | Optional `resegmentRange` / `removeOutliers`; shape stays morph unless `resegmentShape` | IBSI: “The morphological mask is not re-segmented […] The intensity mask can be re-segmented.” |
 | Fixed-bin-size edges | From resegmentation min | From 0: \(\lfloor X/w_b\rfloor-\lfloor X_\min/w_b\rfloor+1\) | IBSI: FBS “starting at […] the lower bound of the re-segmentation range.” PyRadiomics FAQ “equally spaced from 0”. |
+| Bin assignment | IBSI formulas: FBS \(\lfloor (X-X_\min)/w_b\rfloor+1\); FBN \(\lfloor N_g (X-X_\min)/(X_\max-X_\min)\rfloor+1\) | The same edges and steps as PyRadiomics 3.1.0: `numpy.arange` (bin width) or `numpy.histogram` (bin count), then `numpy.digitize`. A voxel exactly on a bin edge goes where numpy puts it (since 0.1.1). | IBSI reference manual, discretisation; PyRadiomics `imageoperations.getBinEdges` / `binImage`. |
 | Kurtosis | Excess (\(-3\); Gaussian \(=0\)) | Raw (Gaussian \(=3\)) | PyRadiomics first-order docs: “The PyRadiomics kurtosis is not corrected, yielding a value 3 higher than the IBSI kurtosis.” |
 | PCA covariance | Divide by \(N-1\) | Divide by \(N\) (`physicalCoordinates /= sqrt(Np)` then Gram) | PyRadiomics `shape.py` 3.1.0. IBSI digital phantom matches \(N-1\). |
 | Surface mesh | Lorensen 256-cube, 0.5-iso | PyRadiomics `cshape.c` 128-cube (symmetry-folded) | PyRadiomics `cshape.c` `calculate_coefficients`. |

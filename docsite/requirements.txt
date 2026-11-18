@@ -1,0 +1,5 @@
+# Pinned so the documentation builds the same everywhere (Read the Docs, CI, locally).
+mkdocs==1.6.1
+mkdocs-material==9.6.14
+mkdocstrings[python]==0.29.1
+pymdown-extensions==10.15
