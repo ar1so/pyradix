@@ -1,3 +1,7 @@
+---
+description: "Radiomics feature reference: first-order, shape, GLCM, GLRLM, GLSZM, GLDM and NGTDM features in pyradix, with names identical to PyRadiomics."
+---
+
 # Feature reference
 
 pyradix computes the same feature classes as PyRadiomics, with the same names, in both modes. A result key reads

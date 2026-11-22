@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/brand/radix-icon.svg" width="96" alt="pyradix logo"></p>
 <h1 align="center">pyradix</h1>
-<p align="center"><b>Radiomics feature extraction for Python: standardised, reproducible and fast.</b></p>
+<p align="center"><b>Fast, IBSI-compliant radiomics feature extraction for Python.<br>A PyRadiomics-compatible alternative with a Rust engine: standardised, reproducible and fast.</b></p>
 <p align="center">
   <a href="https://pypi.org/project/pyradix-radiomics/"><img src="https://img.shields.io/pypi/v/pyradix-radiomics?color=3C8DCC" alt="PyPI"></a>
   <a href="https://pyradix.readthedocs.io"><img src="https://readthedocs.org/projects/pyradix/badge/?version=latest" alt="Documentation"></a>
@@ -11,7 +11,9 @@
   <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/built%20with-Rust%20%F0%9F%A6%80-DEA584" alt="Built with Rust"></a>
 </p>
 
-![pyradix: radiomics feature extraction for Python](docs/brand/radix-cover.png)
+![pyradix cover: IBSI-compliant radiomics feature extraction for Python, compatible with PyRadiomics 3.1.0](docs/brand/radix-cover.png)
+
+**pyradix** is an open-source Python library for **radiomics feature extraction** from CT, MRI and PET images. It computes IBSI-standardised shape, first-order and texture features (GLCM, GLRLM, GLSZM, GLDM, NGTDM), and it can also reproduce **PyRadiomics 3.1.0** results exactly.
 
 ## What does pyradix do?
 
@@ -36,7 +38,7 @@ What makes pyradix different:
 
 ---
 
-**Contents:** [Install](#install) · [Your input files](#before-you-start-your-input-files) · [Quick start](#quick-start) · [Many patients](#many-patients--one-table) · [Which mode?](#which-mode-ibsi-or-pyradiomics) · [More usage](#more-usage) · [What the features mean](#what-the-features-mean) · [Common errors](#common-errors) · [How we know it is right](#how-we-know-it-is-right) · [Speed](#speed) · [Limitations](#known-limitations) · [Help](#getting-help) · [Citing](#citing) · [About us](#about-us)
+**Contents:** [Install](#install) · [Your input files](#before-you-start-your-input-files) · [Quick start](#quick-start) · [Many patients](#many-patients--one-table) · [Which mode?](#which-mode-ibsi-or-pyradiomics) · [pyradix vs PyRadiomics](#pyradix-vs-pyradiomics) · [Migrating from PyRadiomics](#migrating-from-pyradiomics) · [More usage](#more-usage) · [What the features mean](#what-the-features-mean) · [Common errors](#common-errors) · [How we know it is right](#how-we-know-it-is-right) · [Speed](#speed) · [Limitations](#known-limitations) · [Roadmap](#roadmap-gpu-acceleration-planned) · [Help](#getting-help) · [Citing](#citing) · [About us](#about-us)
 
 ## Install
 
@@ -153,6 +155,39 @@ table.to_csv("features.csv")             # one row per patient, one column per f
 
 **If unsure, use the default (`ibsi`).** The two standards define some things differently (for example where intensity bins start, and how a few statistics are computed), so the same image gives slightly different numbers in each mode. Never mix modes inside one study. Every difference is listed in [docs/DEVIATIONS.md](docs/DEVIATIONS.md).
 
+## pyradix vs PyRadiomics
+
+pyradix gives you the same feature classes, with the same names, from a different engine, and adds an IBSI mode.
+
+| | pyradix | PyRadiomics 3.1.0 |
+|---|---|---|
+| Definitions followed | IBSI (default) **or** PyRadiomics 3.1.0 (`mode="pyradiomics"`) | PyRadiomics' own |
+| Checked against IBSI 1 and IBSI 2 references | Yes, on every change ([how](#how-we-know-it-is-right)) | Partly; PyRadiomics documents where it differs from IBSI |
+| Feature names | Same as PyRadiomics | — |
+| PyRadiomics parameter files | Read unchanged (`from_pyradiomics_yaml`) | — |
+| Engine | Rust; releases the Python GIL | Python with C extensions |
+| Speed | Faster in `pyradiomics` mode ([see Speed](#speed)) | Reference |
+| Ready-made wheels | Python 3.10–3.13 on Linux, macOS, Windows | See the PyRadiomics project |
+| Reporting | Settings fingerprint and a CLEAR checklist YAML | `diagnostics_` fields |
+
+## Migrating from PyRadiomics
+
+Your parameter file and feature names carry over. Only the import and the call change: pyradix is not a drop-in `import radiomics` replacement.
+
+```python
+# Before: PyRadiomics
+from radiomics import featureextractor
+extractor = featureextractor.RadiomicsFeatureExtractor("params.yaml")
+features = extractor.execute("image.nii.gz", "mask.nii.gz")
+
+# After: pyradix, same numbers as PyRadiomics 3.1.0
+from pyradix import RadixExtractor
+extractor = RadixExtractor.from_pyradiomics_yaml("params.yaml")
+features = extractor.extract("image.nii.gz", "mask.nii.gz").values
+```
+
+`from_pyradiomics_yaml` selects `mode="pyradiomics"` for you. For a new study, consider the IBSI default instead (see [Which mode?](#which-mode-ibsi-or-pyradiomics)).
+
 ## More usage
 
 **Use an existing PyRadiomics parameter file** (unchanged):
@@ -256,6 +291,20 @@ Time to extract one case, after loading, with the same settings in both tools, o
 - **Wavelet features after strong resampling.** When images are resampled to 3 mm or coarser, a handful of wavelet features can differ from PyRadiomics in the fourth significant digit.
 - **DICOM** is not read directly; convert to NIfTI first.
 
+## Roadmap: GPU acceleration (planned)
+
+> **Planned — not yet available.** pyradix runs on the CPU today. Nothing below is in a release yet, and we will publish speed numbers only once they are measured.
+
+We plan to add optional GPU backends so large studies (thousands of patients, many filters) extract in minutes rather than hours:
+
+- **CUDA backend** for NVIDIA GPUs, and an **Apple Metal** backend for Apple-silicon Macs.
+- **Batch extraction** across many patients and regions of interest in one call.
+- **GPU texture matrices:** GLCM, GLRLM, GLSZM, GLDM and NGTDM computed on the GPU, together with image filters and voxel-wise feature maps.
+- **Optional PyTorch tensor input and output**, so features can be computed inside a deep-learning pipeline without copying data back to the CPU.
+- **Same numbers as the CPU path.** GPU results must pass the same IBSI 1, IBSI 2 and PyRadiomics 3.1.0 tests before release, and the CPU engine stays the reference.
+
+The GPU backend will be an optional extra; the default install will not change. Ideas, use cases or hardware to test on: open an [issue](https://github.com/ar1so/pyradix/issues). Details: [Roadmap](https://pyradix.readthedocs.io/en/latest/roadmap/).
+
 ## Documentation
 
 | | |
@@ -282,9 +331,10 @@ If you use pyradix in a publication, please cite it. The **Cite this repository*
 
 <table>
 <tr>
-<td align="center" valign="top" width="33%"><img src="docs/team/ahmadreza-sohrabi.jpg" width="120" alt="Ahmadreza Sohrabi"><br><b>Ahmadreza Sohrabi</b><br><sub>MD · <a href="https://github.com/ar1so">@ar1so</a></sub><br><br><div align="left"><sub>Ahmadreza discovered in medical school how much technology could change healthcare, and he has been building that change ever since. He’s Tech Lead at Zeenome and an AI Research Fellow at ADIR, developing deep learning for medical imaging. He also contributes to open-source medical AI and mentors young developer-researchers, guided by a belief in thoughtful, ethical AI.</sub></div><br><a href="https://www.linkedin.com/in/arsohrabi/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/ar1so"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=fLVfLUQAAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
-<td align="center" valign="top" width="33%"><img src="docs/team/seyed-amir-asef-agah.jpg" width="120" alt="Amir Asef Agah"><br><b>Amir Asef Agah</b><br><sub>MD · <a href="https://github.com/AmirAsefAgah">@AmirAsefAgah</a></sub><br><br><div align="left"><sub>Amir is a physician on the path to neurosurgery, driven by one question: how can imaging help surgeons make better decisions? As a Postdoctoral Research Fellow at ADIR, Tehran University of Medical Sciences, he works on MRI radiomics, cerebrovascular imaging, and automated segmentation. He also reviews for World Neurosurgery and JIIM.</sub></div><br><a href="https://www.linkedin.com/in/seyed-amir-asef-agah-552264180/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/AmirAsefAgah"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=Y0ZYG38AAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
-<td align="center" valign="top" width="33%"><img src="docs/team/mostafa-neshat-ghalibaf.jpg" width="120" alt="Mostafa Neshat"><br><b>Mostafa Neshat</b><br><sub>MD · <a href="https://github.com/mostafansh">@mostafansh</a></sub><br><br><div align="left"><sub>Mostafa sees a brain scan as both a patient’s story and data waiting to be understood. A physician at ADIR, he turns clinical neuroimaging into data AI models can learn from, and in 2025 he began an MSc in computer science. He’s on his way to radiology, hoping to make it more computational and quantitative.</sub></div><br><a href="https://www.linkedin.com/in/mostafansh/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/mostafansh"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?hl=en&amp;user=xIceI6AAAAAJ"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+<td align="center" valign="top" width="25%"><img src="docs/team/ahmadreza-sohrabi.jpg" width="120" alt="Ahmadreza Sohrabi"><br><b>Ahmadreza Sohrabi</b><br><sub>MD · <a href="https://github.com/ar1so">@ar1so</a></sub><br><br><div align="left"><sub>Ahmadreza discovered in medical school how much technology could change healthcare, and he has been building that change ever since. He’s Tech Lead at Zeenome and an AI Research Fellow at ADIR, developing deep learning for medical imaging. He also contributes to open-source medical AI and mentors young developer-researchers, guided by a belief in thoughtful, ethical AI.</sub></div><br><a href="https://www.linkedin.com/in/arsohrabi/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/ar1so"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=fLVfLUQAAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+<td align="center" valign="top" width="25%"><img src="docs/team/shahriar-kolahi.jpg" width="120" alt="Dr Shahriar Kolahi"><br><b>Dr Shahriar Kolahi</b><br><sub>MD, EDiNR · <a href="https://github.com/shahriarkolahi-web">@shahriarkolahi-web</a></sub><br><br><div align="left"><sub>Shahriar is an Assistant Professor of Radiology at Tehran University of Medical Sciences and holds the European Diploma in Neuroradiology (EDiNR).</sub></div><br><a href="https://github.com/shahriarkolahi-web"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a></td>
+<td align="center" valign="top" width="25%"><img src="docs/team/seyed-amir-asef-agah.jpg" width="120" alt="Amir Asef Agah"><br><b>Amir Asef Agah</b><br><sub>MD · <a href="https://github.com/AmirAsefAgah">@AmirAsefAgah</a></sub><br><br><div align="left"><sub>Amir is a physician on the path to neurosurgery, driven by one question: how can imaging help surgeons make better decisions? As a Postdoctoral Research Fellow at ADIR, Tehran University of Medical Sciences, he works on MRI radiomics, cerebrovascular imaging, and automated segmentation. He also reviews for World Neurosurgery and JIIM.</sub></div><br><a href="https://www.linkedin.com/in/seyed-amir-asef-agah-552264180/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/AmirAsefAgah"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?user=Y0ZYG38AAAAJ&amp;hl=en"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
+<td align="center" valign="top" width="25%"><img src="docs/team/mostafa-neshat-ghalibaf.jpg" width="120" alt="Mostafa Neshat"><br><b>Mostafa Neshat</b><br><sub>MD · <a href="https://github.com/mostafansh">@mostafansh</a></sub><br><br><div align="left"><sub>Mostafa sees a brain scan as both a patient’s story and data waiting to be understood. A physician at ADIR, he turns clinical neuroimaging into data AI models can learn from, and in 2025 he began an MSc in computer science. He’s on his way to radiology, hoping to make it more computational and quantitative.</sub></div><br><a href="https://www.linkedin.com/in/mostafansh/"><img src="docs/brand/icons/linkedin.svg" width="22" alt="LinkedIn"></a> <a href="https://github.com/mostafansh"><img src="docs/brand/icons/github.svg" width="22" alt="GitHub"></a> <a href="https://scholar.google.com/citations?hl=en&amp;user=xIceI6AAAAAJ"><img src="docs/brand/icons/scholar.svg" width="22" alt="Google Scholar"></a></td>
 </tr>
 </table>
 

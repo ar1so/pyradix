@@ -5,24 +5,41 @@ build-backend = "maturin"
 [project]
 name = "pyradix-radiomics"
 version = "0.1.1"
-description = "Radiomics feature extraction for Python: IBSI and PyRadiomics 3.1.0 modes, Rust engine"
+description = "Fast, IBSI-compliant radiomics feature extraction for Python: a PyRadiomics 3.1.0-compatible alternative with a Rust engine"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 authors = [
     { name = "Ahmadreza Sohrabi-Ashlaghi" },
+    { name = "Shahriar Kolahi" },
     { name = "Seyed Amir Asef Agah" },
     { name = "Mostafa Neshat Ghalibaf" },
 ]
 keywords = [
     "radiomics",
-    "ibsi",
     "pyradiomics",
+    "pyradiomics-alternative",
+    "ibsi",
+    "image-biomarker",
+    "radiomics-features",
+    "texture-features",
+    "texture-analysis",
+    "glcm",
+    "glrlm",
+    "glszm",
+    "gldm",
+    "ngtdm",
+    "feature-extraction",
     "medical-imaging",
+    "quantitative-imaging",
+    "ct",
+    "mri",
+    "pet",
     "nifti",
     "nrrd",
-    "feature-extraction",
+    "oncology",
+    "rust",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",

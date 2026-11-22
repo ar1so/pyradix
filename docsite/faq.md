@@ -1,4 +1,36 @@
+---
+description: "pyradix FAQ: PyRadiomics compatibility, IBSI, Python 3.13 support, DICOM input, binning, speed and common radiomics extraction errors."
+---
+
 # FAQ
+
+## Is pyradix a drop-in replacement for PyRadiomics?
+
+For your settings and results, yes; for your code, almost. `RadixExtractor.from_pyradiomics_yaml("params.yaml")` reads
+an existing PyRadiomics parameter file unchanged, and in `pyradiomics` mode the feature names and values match
+PyRadiomics 3.1.0. You change the import and one call:
+
+```python
+from pyradix import RadixExtractor
+
+extractor = RadixExtractor.from_pyradiomics_yaml("params.yaml")   # was RadiomicsFeatureExtractor("params.yaml")
+features = extractor.extract("image.nii.gz", "mask.nii.gz").values  # was extractor.execute(...)
+```
+
+## Does pyradix support Python 3.13?
+
+Yes. Ready-made wheels exist for CPython 3.10, 3.11, 3.12 and 3.13 on Linux (x86_64, aarch64), macOS (Intel and
+Apple silicon) and Windows x64, so `pip install pyradix-radiomics` needs no compiler.
+
+## Is pyradix IBSI-compliant?
+
+The default `ibsi` mode follows the IBSI reference manual. Every change is tested against the published IBSI 1
+feature values and IBSI 2 filter responses; see [Validation](validation.md).
+
+## Does pyradix run on the GPU?
+
+Not yet. pyradix runs on the CPU today. GPU acceleration (CUDA and Apple Metal) is planned; see the
+[Roadmap](roadmap.md).
 
 ## Which mode should I use?
 

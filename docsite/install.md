@@ -1,3 +1,7 @@
+---
+description: "Install pyradix (pyradix-radiomics on PyPI) with pip, uv or Docker. Ready-made wheels for Python 3.10–3.13 on Linux, macOS and Windows."
+---
+
 # Install
 
 Ready-made packages exist for Python 3.10–3.13 on Linux, macOS and Windows; no Rust or compiler needed. On PyPI the package is **`pyradix-radiomics`**; in code you `import pyradix`.
@@ -17,10 +21,31 @@ uvx --from pyradix-radiomics pyradix --help  # run the command line without inst
 
 ## Docker
 
+Use Docker if you do not want to install Python, or need the same environment on every machine. You only need
+[Docker](https://docs.docker.com/get-docker/); no Python or Rust.
+
+**1. Build the image** once. It compiles pyradix from the GitHub source, so the first build takes several minutes:
+
 ```bash
 docker build -t pyradix https://github.com/ar1so/pyradix.git
+```
+
+**2. Check it works:**
+
+```bash
+docker run --rm pyradix --version
+```
+
+**3. Extract features.** Run this from the folder that holds your image and mask. `-v "$PWD:/data"` makes that
+folder visible inside the container, and `features.csv` is written back into it:
+
+```bash
 docker run --rm -v "$PWD:/data" pyradix extract image.nii.gz mask.nii.gz --out features.csv
 ```
+
+The container runs the `pyradix` command line, so every option of `pyradix extract --help` works the same way. On
+Windows PowerShell, use `${PWD}` instead of `$PWD`. On Linux, if you get "Permission denied" writing the output,
+add `--user "$(id -u):$(id -g)"` after `docker run`.
 
 ## From source
 

@@ -1,3 +1,7 @@
+---
+description: "IBSI or PyRadiomics mode in pyradix: which radiomics standard to choose, how feature definitions, binning and filters differ, and how to match PyRadiomics 3.1.0."
+---
+
 # IBSI or PyRadiomics?
 
 | | `mode="ibsi"` (default) | `mode="pyradiomics"` |

@@ -1,3 +1,7 @@
+---
+description: "How pyradix radiomics features are validated against IBSI 1, IBSI 2 and PyRadiomics 3.1.0 reference values on Linux, macOS and Windows."
+---
+
 # Validation
 
 Every CI run, on Linux, macOS and Windows, downloads small public datasets and compares pyradix with reference values.

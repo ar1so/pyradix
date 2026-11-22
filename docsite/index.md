@@ -1,6 +1,10 @@
+---
+description: "pyradix: fast, IBSI-compliant radiomics feature extraction for Python. A PyRadiomics 3.1.0-compatible alternative with a Rust engine, for CT, MRI and PET."
+---
+
 # pyradix
 
-**Radiomics feature extraction for Python: standardised, reproducible and fast.**
+**Fast, IBSI-compliant radiomics feature extraction for Python: a PyRadiomics-compatible alternative with a Rust engine.**
 
 You give pyradix a medical image (CT, MRI, PET…) and a **mask** that marks a region in it, usually a tumour. It returns a few hundred numbers, **radiomics features**, describing that region's size and shape, intensity and texture. Researchers use them in statistics and machine learning, for example to predict treatment response.
 

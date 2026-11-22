@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{#- Social cards and structured data for search engines. Static, no extra build dependencies. -#}
+{% block extrahead %}
+  {%- set page_title = (page.title ~ " · " ~ config.site_name) if page and page.title and not page.is_homepage else config.site_name ~ ": radiomics feature extraction for Python" -%}
+  {%- set page_desc = (page.meta.description if page and page.meta and page.meta.description else config.site_description) | striptags | trim -%}
+  {%- set social_image = "https://raw.githubusercontent.com/ar1so/pyradix/main/docs/brand/radix-social-preview.png" -%}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_desc }}">
+  {% if page and page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta property="og:image" content="{{ social_image }}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="pyradix: IBSI-compliant radiomics feature extraction for Python">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_desc }}">
+  <meta name="twitter:image" content="{{ social_image }}">
+  <meta name="keywords" content="radiomics, pyradiomics, pyradiomics alternative, IBSI, image biomarker, radiomics feature extraction, texture features, GLCM, GLRLM, GLSZM, GLDM, NGTDM, medical imaging, CT, MRI, PET, NIfTI, NRRD, Python, Rust">
+  {% if page and page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "pyradix",
+    "alternateName": "pyradix-radiomics",
+    "description": {{ config.site_description | striptags | trim | tojson }},
+    "url": "https://pyradix.readthedocs.io/",
+    "codeRepository": "https://github.com/ar1so/pyradix",
+    "programmingLanguage": ["Python", "Rust"],
+    "runtimePlatform": "Python 3.10-3.13",
+    "license": "https://opensource.org/licenses/BSD-3-Clause",
+    "keywords": "radiomics, IBSI, PyRadiomics, medical imaging, texture features",
+    "author": [
+      {"@type": "Person", "name": "Ahmadreza Sohrabi-Ashlaghi"},
+      {"@type": "Person", "name": "Shahriar Kolahi"},
+      {"@type": "Person", "name": "Seyed Amir Asef Agah"},
+      {"@type": "Person", "name": "Mostafa Neshat Ghalibaf"}
+    ]
+  }
+  </script>
+  {% endif %}
+{% endblock %}

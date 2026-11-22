@@ -1,15 +1,20 @@
 site_name: pyradix
-site_description: Radiomics feature extraction for Python, IBSI and PyRadiomics 3.1.0 modes, Rust engine
-site_url: https://pyradix.readthedocs.io/
+site_description: >-
+  Fast, IBSI-compliant radiomics feature extraction for Python. A PyRadiomics 3.1.0-compatible
+  alternative with a Rust engine for CT, MRI and PET: shape, first-order, GLCM, GLRLM, GLSZM, GLDM and NGTDM features.
+site_author: Ahmadreza Sohrabi-Ashlaghi, Shahriar Kolahi, Seyed Amir Asef Agah, Mostafa Neshat Ghalibaf
+# Read the Docs sets the canonical URL (with /en/latest/); the fallback is for local builds.
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, "https://pyradix.readthedocs.io/en/latest/"]
 repo_url: https://github.com/ar1so/pyradix
 repo_name: ar1so/pyradix
 edit_uri: edit/main/docsite/
 docs_dir: docsite
 site_dir: site-build
-copyright: BSD 3-Clause licence · Ahmadreza Sohrabi-Ashlaghi, Seyed Amir Asef Agah, Mostafa Neshat Ghalibaf
+copyright: BSD 3-Clause licence · Ahmadreza Sohrabi-Ashlaghi, Shahriar Kolahi, Seyed Amir Asef Agah, Mostafa Neshat Ghalibaf
 
 theme:
   name: material
+  custom_dir: docsite-overrides
   logo: brand/radix-icon-reversed.svg
   favicon: brand/radix-icon.svg
   palette:
@@ -80,6 +85,7 @@ nav:
       - NGTDM: features/ngtdm.md
   - Validation: validation.md
   - FAQ: faq.md
+  - Roadmap (GPU, planned): roadmap.md
   - API reference: api.md
   - About:
       - Citing: citing.md
